@@ -1,2 +1,2 @@
 # busytanks
-busytanks is a web game designed to help support local busineses. The game is a 2D battle royale where the user plays as a tank. The user can put a custom skin on their tank showing off a local business's logo.
+busytanks is a web game designed to help support local busineses. The game is a 2D tank game. The user can put a custom skin on their tank showing off a local business's logo. There are various classes of tanks each that have special abilities. For example their could be a toxic gas tank, that has cannons that launch bombs of the toxic gas. There could also be a recon tank, that could launch drones that allow players to survey the battlefield. The game would have 2 modes, a large battle royale, as well as a, 3v3 tactical mode.
