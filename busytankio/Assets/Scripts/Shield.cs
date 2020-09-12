@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShildSCRIPT : MonoBehaviour
+public class Shield : MonoBehaviour
 {
     public PlayerMovementScript player;
     public int maxHP1 = 100;
@@ -15,7 +15,7 @@ public class ShildSCRIPT : MonoBehaviour
     {
         currentHealth1 = maxHP1;
         healthBar1.SetMaxHP(maxHP1);
-        player = GameObject.Find("Player 1").GetComponent<PlayerMovementScript>();
+        player = GameObject.Find("Player").GetComponent<PlayerMovementScript>();
         
     }
 
@@ -27,9 +27,9 @@ public class ShildSCRIPT : MonoBehaviour
             TakeDamage1(1);
         }
 
-        if (player.shildUp == true)
+        if (player.shieldUp == true)
         {
-            player.shildUp = false;
+            player.shieldUp = false;
             if (currentHealth1 < 100)
             {
                 if (currentHealth1 + 25 > 100)

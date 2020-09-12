@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovementScript : MonoBehaviour
 {
-    public bool shildUp = false;
+    public bool shieldUp = false;
     public bool ammoUp = false;
     public bool healthUp = false;
     public bool isUp = false;
@@ -72,7 +72,7 @@ public class PlayerMovementScript : MonoBehaviour
         {
             Destroy(other.gameObject);
             Debug.Log("Shild Collected");
-            shildUp = true;
+            shieldUp = true;
         }
 
         if (other.gameObject.CompareTag("health"))

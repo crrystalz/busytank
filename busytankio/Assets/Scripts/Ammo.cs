@@ -2,32 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class AmmoSCRIPT : MonoBehaviour
+public class Ammo: MonoBehaviour
 {
     public PlayerMovementScript player;
     public int AmmoStart = 100;
-    public int Ammo = 100;
+    public int AmmoV = 100;
     public Text ammotext;
 
     void Start()
     {
-        player = GameObject.Find("Player 1").GetComponent<PlayerMovementScript>();
+        player = GameObject.Find("Player").GetComponent<PlayerMovementScript>();
     }
     void Update()
     {
-        ammotext.text = Ammo + " / " + AmmoStart;
+        ammotext.text = AmmoV + " / " + AmmoStart;
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            Ammo--;
+            AmmoV--;
         }
 
         if (player.ammoUp == true)
         {
             player.ammoUp = false;
-            if (Ammo < AmmoStart)
+            if (AmmoV < AmmoStart)
             {
-                if(Ammo + 25 > AmmoStart)
+                if(AmmoV + 25 > AmmoStart)
                 {
                     GetMaxAMMO();
                 }
@@ -43,12 +43,12 @@ public class AmmoSCRIPT : MonoBehaviour
 
     void GetAMMO(int bullets)
     {
-        Ammo += bullets;
+        AmmoV += bullets;
 
     }
     void GetMaxAMMO()
     {
-        Ammo += AmmoStart - Ammo;
+        AmmoV += AmmoStart - AmmoV;
 
     }
 }

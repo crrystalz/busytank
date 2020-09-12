@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthSCRIPT : MonoBehaviour
+public class Health : MonoBehaviour
 {
     public PlayerMovementScript player;
     public int maxHP = 100;
@@ -14,7 +14,7 @@ public class HealthSCRIPT : MonoBehaviour
     {
         currentHealth = maxHP;
         healthBar.SetMaxHP(maxHP);
-        player = GameObject.Find("Player 1").GetComponent<PlayerMovementScript>();
+        player = GameObject.Find("Player").GetComponent<PlayerMovementScript>();
     }
 
     // Update is called once per frame
