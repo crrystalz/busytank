@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    public PlayerMovementScript player;
+    public TankMovement player;
     public int maxHP1 = 100;
     public int currentHealth1;
     public int o100 = 100;
@@ -15,7 +15,7 @@ public class Shield : MonoBehaviour
     {
         currentHealth1 = maxHP1;
         healthBar1.SetMaxHP(maxHP1);
-        player = GameObject.Find("Player").GetComponent<PlayerMovementScript>();
+        player = GameObject.Find("Player").GetComponent<TankMovement>();
         
     }
 
