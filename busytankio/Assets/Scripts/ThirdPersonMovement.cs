@@ -8,6 +8,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public Transform cam;
 
     // public float speed = 6f;
+    public enum TankCategory {HeavyTank, ScoutTank, MortarTank, SniperTank};
+    public TankCategory tankType;
     private int health = 100;
     private int attack = 100;
     private int speed = 100;
