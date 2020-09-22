@@ -7,7 +7,12 @@ public class ThirdPersonMovement : MonoBehaviour
     public CharacterController controller;
     public Transform cam;
 
-    public float speed = 6f;
+    // public float speed = 6f;
+    private int health = 100;
+    private int attack = 100;
+    private int speed = 100;
+    private int zoom = 100;
+    private int view = 100;
 
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
@@ -21,6 +26,35 @@ public class ThirdPersonMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        switch(tankType)
+        {
+            case TankCategory.HeavyTank:
+                Debug.Log("Setting HeavyTank Properties");
+                health = 120;
+                speed = 70;
+            break;
+
+            case TankCategory.ScoutTank:
+                Debug.Log("Setting ScoutTank Properties");
+                attack = 90;
+                speed = 110;
+                zoom = 104;
+            break;
+
+            case TankCategory.MortarTank:
+                Debug.Log("Setting MortarTank Properties");
+                attack = 130;
+                speed = 60;
+                view = 108;
+            break;
+            
+            case TankCategory.SniperTank:
+                Debug.Log("Setting SniperTank Properties");
+                health = 70;
+                attack = 125;
+                zoom = 130;
+            break;
+        }
     }
 
 
@@ -38,7 +72,7 @@ public class ThirdPersonMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            controller.Move(moveDir.normalized * speed / 20 * Time.deltaTime);
         }
     }
 
