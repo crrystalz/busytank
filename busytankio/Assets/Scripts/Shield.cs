@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shield : MonoBehaviour
+public class Shild : MonoBehaviour
 {
     public TankMovement player;
     public int maxHP1 = 100;
@@ -16,7 +16,7 @@ public class Shield : MonoBehaviour
         currentHealth1 = maxHP1;
         healthBar1.SetMaxHP(maxHP1);
         player = GameObject.Find("Player").GetComponent<TankMovement>();
-        
+
     }
 
     // Update is called once per frame
@@ -27,9 +27,9 @@ public class Shield : MonoBehaviour
             TakeDamage1(1);
         }
 
-        if (player.shieldUp == true)
+        if (player.shildUp == true)
         {
-            player.shieldUp = false;
+            player.shildUp = false;
             if (currentHealth1 < 100)
             {
                 if (currentHealth1 + 25 > 100)
@@ -40,11 +40,11 @@ public class Shield : MonoBehaviour
                 {
                     GetSP(25);
                 }
-                
+
             }
-            
+
         }
-        
+
 
     }
 
