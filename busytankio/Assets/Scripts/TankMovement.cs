@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class TankMovement : MonoBehaviour
 {
-
     public CharacterController controller;
 
     public float speed = 6f;
     public bool shildUp = false;
     public bool ammoUp = false;
     public bool healthUp = false;
+    // public string tankCategory = "Scout Tank";
+    public enum TankCategory {HeavyTank, ScoutTank, MortarTank, SniperTank};
+    public TankCategory tankType;
+
     Rigidbody rb;
     void Start()
     {
@@ -50,4 +53,5 @@ public class TankMovement : MonoBehaviour
             ammoUp = true;
         }
     }
+    
 }
