@@ -12,6 +12,18 @@ public class ThirdPersonMovement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
+    // Health and Stuff
+    public bool shildUp = false;
+    public bool ammoUp = false;
+    public bool healthUp = false;
+    Rigidbody rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -29,4 +41,29 @@ public class ThirdPersonMovement : MonoBehaviour
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("shild"))
+        {
+            Destroy(other.gameObject);
+            Debug.Log("Shield Collected");
+            shildUp = true;
+        }
+
+        if (other.gameObject.CompareTag("health"))
+        {
+            Destroy(other.gameObject);
+            Debug.Log("Meds Collected");
+            healthUp = true;
+        }
+
+        if (other.gameObject.CompareTag("ammo"))
+        {
+            Destroy(other.gameObject);
+            Debug.Log("Ammo Collected");
+            ammoUp = true;
+        }
+    }
 }
+

@@ -863,11 +863,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54746c30f64a8554b87a541514cd675c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 919132149356748603}
   maxHP1: 100
   currentHealth1: 0
-  o100: 100
-  healthBar1: {fileID: 0}
+  healthBar1: {fileID: 1284496356}
 --- !u!4 &536916268
 Transform:
   m_ObjectHideFlags: 0
@@ -1177,10 +1176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa12105ebec8434a9daf92f905176b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 919132149356748603}
   maxHP: 100
   currentHealth: 0
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 1021414919}
 --- !u!4 &954087537
 Transform:
   m_ObjectHideFlags: 0
@@ -2241,7 +2240,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134730313}
-  m_LocalRotation: {x: 0.007670669, y: 0.000000017402677, z: -1.334941e-10, w: 0.9999706}
+  m_LocalRotation: {x: 0.0076706703, y: -0.000000017283531, z: 1.3258017e-10, w: 0.9999706}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2293,11 +2292,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 919132149356748602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1367e1300bbc69041a3af7f9b3ce20ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 531e6351138cb3f4dbbbfacdfef8c0e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 919132149356748604}
+  cam: {fileID: 963194228}
   speed: 6
+  turnSmoothTime: 0.1
   shildUp: 0
   ammoUp: 0
   healthUp: 0

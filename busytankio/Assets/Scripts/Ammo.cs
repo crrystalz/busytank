@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Ammo: MonoBehaviour
 {
-    public TankMovement player;
+    public ThirdPersonMovement player;
     public int AmmoStart = 100;
     public int AmmoV = 100;
     public Text ammotext;
 
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<TankMovement>();
+        player = GameObject.Find("Player").GetComponent<ThirdPersonMovement>();
     }
     void Update()
     {

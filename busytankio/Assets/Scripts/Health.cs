@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    public TankMovement player;
+    public ThirdPersonMovement player;
     public int maxHP = 100;
     public int currentHealth;
 
@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     {
         currentHealth = maxHP;
         healthBar.SetMaxHP(maxHP);
-        player = GameObject.Find("Player").GetComponent<TankMovement>();
+        player = GameObject.Find("Player").GetComponent<ThirdPersonMovement>();
     }
 
     // Update is called once per frame

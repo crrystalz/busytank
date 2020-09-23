@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shild : MonoBehaviour
+public class Shield : MonoBehaviour
 {
-    public TankMovement player;
+    public ThirdPersonMovement player;
     public int maxHP1 = 100;
     public int currentHealth1;
-    public int o100 = 100;
 
     public HealthBar healthBar1;
     // Start is called before the first frame update
@@ -15,7 +14,7 @@ public class Shild : MonoBehaviour
     {
         currentHealth1 = maxHP1;
         healthBar1.SetMaxHP(maxHP1);
-        player = GameObject.Find("Player").GetComponent<TankMovement>();
+        player = GameObject.Find("Player").GetComponent<ThirdPersonMovement>();
 
     }
 
