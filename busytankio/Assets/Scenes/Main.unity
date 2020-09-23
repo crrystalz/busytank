@@ -662,10 +662,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df13e3e086081249babde038e741f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 919132149356748603}
   AmmoStart: 100
   AmmoV: 100
-  ammotext: {fileID: 0}
+  ammotext: {fileID: 387976398}
 --- !u!114 &387976398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2240,7 +2240,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134730313}
-  m_LocalRotation: {x: 0.0076706703, y: -0.000000017283531, z: 1.3258017e-10, w: 0.9999706}
+  m_LocalRotation: {x: 0.007670671, y: -0.000000017245696, z: 1.3228994e-10, w: 0.9999706}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2297,7 +2297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 919132149356748604}
   cam: {fileID: 963194228}
-  speed: 6
+  tankType: 0
   turnSmoothTime: 0.1
   shildUp: 0
   ammoUp: 0
@@ -2400,6 +2400,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2003181392957678397, guid: 57b92991f5d7a204b91f0aa300ce33aa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9ecad36acc8c0b8498cb0513a69383c7, type: 2}
     - target: {fileID: 8973423212020182488, guid: 57b92991f5d7a204b91f0aa300ce33aa, type: 3}
       propertyPath: m_Name
       value: GFX
