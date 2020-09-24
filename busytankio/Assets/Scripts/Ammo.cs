@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Ammo: MonoBehaviour
 {
+    public enum TankCategory {HeavyTank, ScoutTank, MortarTank, SniperTank};
+    public TankCategory tankType;
     public ThirdPersonMovement player;
     public int AmmoStart = 100;
     public int AmmoV = 100;
@@ -12,6 +14,20 @@ public class Ammo: MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<ThirdPersonMovement>();
+        switch(tankType)
+            {
+                case TankCategory.HeavyTank:
+                break;
+
+                 case TankCategory.ScoutTank:
+                break;
+
+                case TankCategory.MortarTank:
+                break;
+
+                case TankCategory.SniperTank:
+                break;
+        }
     }
     void Update()
     {
