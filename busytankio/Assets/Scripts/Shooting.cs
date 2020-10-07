@@ -4,7 +4,6 @@ public class Shooting : MonoBehaviour
 {
     public float damage = 10f;
     public float range = 100f;
-
     public Camera fpsCam;
 
     // Update is called once per frame
