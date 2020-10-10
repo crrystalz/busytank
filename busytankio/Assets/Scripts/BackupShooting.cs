@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BackupShooting : MonoBehaviour
 {
+    /*
     private CharacterController _controller;
     [SerializeField]
 
@@ -86,4 +87,5 @@ public class BackupShooting : MonoBehaviour
     {
         _weapon.SetActive(true);
     }
+    */
 }
