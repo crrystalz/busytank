@@ -29,15 +29,17 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            rb.AddRelativeForce(Vector3.right * speed);
+            //rb.AddRelativeForce(Vector3.forward * speed);
+            rb.velocity = transform.forward * speed;
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            rb.AddRelativeForce(-Vector3.right * speed);
+            //rb.AddRelativeForce(Vector3.back * speed);
+            rb.velocity = transform.forward * -speed;
         }
         Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity);
         localVelocity.z = 0;
-        rb.velocity = transform.TransformDirection(localVelocity);
+        //rb.velocity = transform.TransformDirection(localVelocity);
 
     }
 
@@ -45,11 +47,13 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
-            rb.AddTorque(Vector3.up * turnspeed);
+            //rb.AddTorque(Vector3.up * turnspeed);
+            transform.Rotate(Vector3.up, turnspeed * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            rb.AddTorque(-Vector3.up * turnspeed);
+            //rb.AddTorque(-Vector3.up * turnspeed);
+            transform.Rotate(Vector3.down, turnspeed * Time.deltaTime);
         }
     }
 }
