@@ -20,7 +20,7 @@ public class Shooting : MonoBehaviour
     }
     void Shoot()
     {
-        Debug.Log("Ho!");
+        Debug.Log("Miss!");
         RaycastHit hit;
         if (Physics.Raycast(gun.position, gun.forward, out hit, range))
         {
