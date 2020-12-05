@@ -6,6 +6,7 @@ public class Gun : MonoBehaviour
     public float range = 100f;
 
     public GameObject player;
+    public ParticleSystem particalsystem;
 
     // Update is called once per frame
     void Update()
@@ -19,6 +20,8 @@ public class Gun : MonoBehaviour
 
     void Shoot ()
     {
+        particalsystem.Play();
+
         RaycastHit hit;
         if (Physics.Raycast(player.transform.position, player.transform.forward, out hit, range))
         {
