@@ -11960,7 +11960,7 @@ GameObject:
   - component: {fileID: 1213211139}
   - component: {fileID: 1213211138}
   m_Layer: 0
-  m_Name: TeAmo Sticker
+  m_Name: Logo Sticker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11998,7 +11998,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 853b2522acdd8a249b3fbc84e46d6a3e, type: 2}
+  - {fileID: 2100000, guid: 0dbd4e108b942604dbe508bf62422bf5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12037,7 +12037,7 @@ Transform:
   m_GameObject: {fileID: 1213211137}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: -0.1, y: 1.829, z: -2.1}
-  m_LocalScale: {x: 1, y: 0.92, z: 0.05051196}
+  m_LocalScale: {x: 2.2, y: 0.89, z: 0.05051196}
   m_Children: []
   m_Father: {fileID: 1151388028882760920}
   m_RootOrder: 0
