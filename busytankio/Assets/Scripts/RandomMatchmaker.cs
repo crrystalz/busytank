@@ -29,12 +29,11 @@ public class RandomMatchmaker : Photon.PunBehaviour
 
     public override void OnJoinedRoom()
     {
-        GameObject monster = PhotonNetwork.Instantiate("monsterprefab", Vector3.zero, Quaternion.identity, 0);
-        monster.GetComponent<myThirdPersonController>().isControllable = true;
-        myPhotonView = monster.GetComponent<PhotonView>();
+        GameObject player = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity, 0);
+        myPhotonView = player.GetComponent<PhotonView>();
     }
 
-    public void OnGUI()
+    /*public void OnGUI()
     {
         GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
 
@@ -52,4 +51,11 @@ public class RandomMatchmaker : Photon.PunBehaviour
             }
         }
     }
+    */
+    public void shootRaycast()
+    {
+
+    }
+
+    public void severMove
 }
