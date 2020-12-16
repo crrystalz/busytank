@@ -33,13 +33,13 @@ public class RandomMatchmaker : Photon.PunBehaviour
         myPhotonView = player.GetComponent<PhotonView>();
     }
 
-    /*public void OnGUI()
+    public void OnGUI()
     {
         GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
 
         if (PhotonNetwork.inRoom)
         {
-            bool shoutMarco = GameLogic.playerWhoIsIt == PhotonNetwork.player.ID;
+            /*bool shoutMarco = GameLogic.playerWhoIsIt == PhotonNetwork.player.ID;
 
             if (shoutMarco && GUILayout.Button("Marco!"))
             {
@@ -48,14 +48,17 @@ public class RandomMatchmaker : Photon.PunBehaviour
             if (!shoutMarco && GUILayout.Button("Polo!"))
             {
                 myPhotonView.RPC("Polo", PhotonTargets.All);
-            }
+            }*/
         }
     }
-    */
+    
     public void shootRaycast()
     {
 
     }
 
-    public void severMove
+    public void severMove()
+    {
+
+    }
 }
