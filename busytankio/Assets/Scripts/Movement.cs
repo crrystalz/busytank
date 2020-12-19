@@ -7,11 +7,16 @@ public class Movement : MonoBehaviour
     public float speed;
     public float turnspeed;
     public float gravitymultiplier;
-
+    public int numPlayer;
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
+        if(numPlayer == RandomMatchmaker.playerNum)
+        {
+            GetComponentInParent<Camera>().enabled = true;
+        }
+        
         rb = GetComponent<Rigidbody>();
     }
 
@@ -19,7 +24,10 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
         // IMPORTANT!!! RIGHT = FORWARD  LEFT = BACKWARD !!!!!
-
+        if (numPlayer != RandomMatchmaker.playerNum)
+        {
+            return;
+        }
         Move();
         Turn();
       
@@ -27,6 +35,7 @@ public class Movement : MonoBehaviour
 
     void Move()
     {
+        
         if (Input.GetKey(KeyCode.W))
         {
             //rb.AddRelativeForce(Vector3.forward * speed);

@@ -8,10 +8,14 @@ public class Gun : MonoBehaviour
     public GameObject player;
     public ParticleSystem particalsystem;
     public GameObject impactEffect;
-
+    public int numPlayer;
     // Update is called once per frame
     void Update()
     {
+        if (numPlayer != RandomMatchmaker.playerNum)
+        {
+            return;
+        }
         if (Input.GetButton("Fire1"))
         {
             Shoot();

@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class RandomMatchmaker : Photon.PunBehaviour
 {
+    // Controls a player
+    public static int playerNum = 1;
+    // The player count
+    private int numPlayerCounter = 0;
     private PhotonView myPhotonView;
-
+    Vector3 postiton = new Vector3(0, 4.48f, 0);
     // Use this for initialization
     public void Start()
     {
@@ -29,8 +33,11 @@ public class RandomMatchmaker : Photon.PunBehaviour
 
     public override void OnJoinedRoom()
     {
-        GameObject player = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity, 0);
+        GameObject player = PhotonNetwork.Instantiate("ScoutTankPrefab", postiton, Quaternion.identity, 0);
+        numPlayerCounter++;
         myPhotonView = player.GetComponent<PhotonView>();
+        player.GetComponent<Movement>().numPlayer = numPlayerCounter;
+        player.GetComponent<Gun>().numPlayer = numPlayerCounter;
     }
 
     public void OnGUI()
