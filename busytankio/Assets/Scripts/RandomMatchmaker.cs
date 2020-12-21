@@ -36,8 +36,8 @@ public class RandomMatchmaker : Photon.PunBehaviour
         GameObject player = PhotonNetwork.Instantiate("ScoutTankPrefab", postiton, Quaternion.identity, 0);
         numPlayerCounter++;
         myPhotonView = player.GetComponent<PhotonView>();
-        player.GetComponent<Movement>().numPlayer = numPlayerCounter;
-        player.GetComponent<Gun>().numPlayer = numPlayerCounter;
+        //player.GetComponent<Movement>().numPlayer = numPlayerCounter;
+        //player.GetComponent<Gun>().numPlayer = numPlayerCounter;
     }
 
     public void OnGUI()
