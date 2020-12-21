@@ -84,7 +84,7 @@ MonoBehaviour:
   range: 100
   player: {fileID: 4599328713778780906}
   particalsystem: {fileID: 5663482318320016756}
-  impactEffect: {fileID: 0}
+  impactEffect: {fileID: 5663482318320016754}
   numPlayer: 0
 --- !u!114 &3971771971304467700
 MonoBehaviour:
