@@ -12,12 +12,13 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(numPlayer == RandomMatchmaker.playerNum)
+        /*if(numPlayer == RandomMatchmaker.playerNum)
         {
             GetComponentInParent<Camera>().enabled = true;
         }
-        
+        */
         rb = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame

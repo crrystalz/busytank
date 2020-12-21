@@ -3,7 +3,7 @@ using UnityEngine;
 public class RandomMatchmaker : Photon.PunBehaviour
 {
     // Controls a player
-    public static int playerNum = 1;
+    public static int playerNum = 0;
     // The player count
     private int numPlayerCounter = 0;
     private PhotonView myPhotonView;
