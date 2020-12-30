@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 4599328713778780911}
   - component: {fileID: 4599328713778780897}
   - component: {fileID: 4599328713778780908}
-  - component: {fileID: 3971771971304467700}
   - component: {fileID: 7510168614003398035}
+  - component: {fileID: 1058971494506008211}
+  - component: {fileID: 2123557429355565224}
   m_Layer: 0
   m_Name: ScoutTankPrefab
   m_TagString: Player
@@ -86,7 +87,23 @@ MonoBehaviour:
   particalsystem: {fileID: 5663482318320016756}
   impactEffect: {fileID: 5663482318320016754}
   numPlayer: 0
---- !u!114 &3971771971304467700
+--- !u!114 &7510168614003398035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599328713778780906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae33e03d3d9d604d88cd2d384cae61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30
+  turnspeed: 90
+  gravitymultiplier: 10
+  numPlayer: 1
+--- !u!114 &1058971494506008211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,7 +130,7 @@ MonoBehaviour:
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
---- !u!114 &7510168614003398035
+--- !u!114 &2123557429355565224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -122,13 +139,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4599328713778780906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ae33e03d3d9d604d88cd2d384cae61d, type: 3}
+  m_Script: {fileID: 11500000, guid: 79a67ed56b768f84c97069d55692100d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
-  turnspeed: 90
-  gravitymultiplier: 10
-  numPlayer: 0
 --- !u!1 &5663482317021541183
 GameObject:
   m_ObjectHideFlags: 0
