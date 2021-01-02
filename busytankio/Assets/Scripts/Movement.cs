@@ -9,6 +9,7 @@ public class Movement : MonoBehaviour
     public float gravitymultiplier;
     public int numPlayer;
     private Rigidbody rb;
+    
     // Start is called before the first frame update
     void Start()
     {

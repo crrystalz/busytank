@@ -38,6 +38,7 @@ public class RandomMatchmaker : Photon.PunBehaviour
         myPhotonView = player.GetComponent<PhotonView>();
         player.GetComponent<Movement>().numPlayer = numPlayerCounter;
         player.GetComponent<Gun>().numPlayer = numPlayerCounter;
+        
     }
 
     public void OnGUI()
