@@ -26,10 +26,7 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
         // IMPORTANT!!! RIGHT = FORWARD  LEFT = BACKWARD !!!!!
-        if (numPlayer != RandomMatchmaker.playerNum)
-        {
-            return;
-        }
+        
         Move();
         Turn();
       

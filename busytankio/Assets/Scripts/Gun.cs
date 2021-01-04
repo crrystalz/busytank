@@ -12,10 +12,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (numPlayer != RandomMatchmaker.playerNum)
-        {
-            return;
-        }
+        
         if (Input.GetButton("Fire1"))
         {
             Shoot();
