@@ -11,6 +11,12 @@ public class LobbyControler : MonoBehaviourPunCallbacks
     [SerializeField]
     private int roomsize;
 
+    void Start()
+    {
+        PhotonNetwork.ConnectUsingSettings();
+    }
+
+
     public override void OnConnectedToMaster()
     {
         PhotonNetwork.AutomaticallySyncScene = true;
@@ -25,6 +31,13 @@ public class LobbyControler : MonoBehaviourPunCallbacks
         PhotonNetwork.JoinRandomRoom();
         Debug.Log("Finding a match...");
     }
+
+    public override void OnJoinedLobby()
+    {
+        base.OnJoinedLobby();
+    }
+    
+
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {

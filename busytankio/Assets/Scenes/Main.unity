@@ -1125,10 +1125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b522ba8b66e20ad4994ab4cad343795d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pvCache: {fileID: 0}
-  numPlayerCounter: 0
-  myPhotonView: {fileID: 0}
-  postiton: {x: 0, y: 4.48, z: 0}
 --- !u!4 &618495844
 Transform:
   m_ObjectHideFlags: 0
@@ -7325,6 +7321,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1058971494506008211, guid: 3b35e6c6355326b41ae870e174bc3dc1, type: 3}
       propertyPath: instantiationId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1381612180777589628, guid: 3b35e6c6355326b41ae870e174bc3dc1, type: 3}
+      propertyPath: viewIdField
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4599328713778780906, guid: 3b35e6c6355326b41ae870e174bc3dc1, type: 3}
