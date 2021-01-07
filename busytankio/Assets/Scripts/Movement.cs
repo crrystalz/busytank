@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,26 +10,32 @@ public class Movement : MonoBehaviour
     public float gravitymultiplier;
     public int numPlayer;
     private Rigidbody rb;
-    
+    private PhotonView PV;
+    public Camera myCam;
+    public AudioListener myAL;
     // Start is called before the first frame update
     void Start()
     {
-        /*if(numPlayer == RandomMatchmaker.playerNum)
-        {
-            GetComponentInParent<Camera>().enabled = true;
-        }
-        */
+        PV = GetComponent<PhotonView>();
         rb = GetComponent<Rigidbody>();
         
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         // IMPORTANT!!! RIGHT = FORWARD  LEFT = BACKWARD !!!!!
+        if (PV.IsMine)
+        {
+            Move();
+            Turn();
+        }
+        else
+        {
+            Destroy(myCam);
+            Destroy(myAL);
+        }
         
-        Move();
-        Turn();
       
     }
 
