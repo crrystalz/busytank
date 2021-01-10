@@ -1,3 +1,16 @@
-# busytankio
+Busytankio
+======
+Busytankio is a third-person-shooter game where you play as a tank. You can select a local bussiness from our collection to help support. The game has two modes, battle royale, and defuse-the-bomb. The players' chosen bussiness's logos are displayed on the tank, advertising it to other players. When the logo is hovered over, a panel appeats above the tank, containing information about the bussiness.
 
-Busytank.io is a tank shooter game, that helps support local businesses. Starting the game, the player will be able to choose a tank class, select a skin, and then add a favorite local business's logo. When they enter a game, they will see other players' business logos, and if a logo is hovered over, a small pop-up will appear, holding information about the business. If a tank dies a tombstone will appear at the deathspot, showing the username as well as the business logo. The game has 2 modes, a battle royale as well as a defuse the bomb. In the battle royale, 50 tanks spawn in the map and the scour for loot. The last tank remainng after the battles is the winner. In the defuse the bomb mode. There are 2 teams each with 5 tanks. One team's goal is to plant a bomb and prevent the bomb from getting defused, and to let it explode. The other team's goal is to defuse the bomb before it detonates. The game has various tank classes each of which has special moves and varying weapons and defenses.
+<table border="0">
+ <tr>
+    <td><b style="font-size:20px">Battle Royale</b></td>
+    <td><b style="font-size:20px">Defuse The Bomb</b></td>
+ </tr>
+ <tr>
+    <td>In battle royale, 20 tanks are launched down into the map from a airplane, tanks collect loot ranging from repair supplies to gun attachments. The last tank remaining undestroyed is the winner of the game.</td>
+    <td>In defuse the bomb, two teams of 5 tanks are pitted against each other in a map. They colelct loot and fight but for each team there is a seperate goal. One team, attempts to plant a bomb and prevent it from getting defused. The other team tries to defuse the bomb, and prevent it from exploding.</td>
+ </tr>
+ 
+
+</table>
