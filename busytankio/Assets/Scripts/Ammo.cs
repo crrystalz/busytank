@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Ammo: MonoBehaviour
+public class Ammo : MonoBehaviour
 {
-    public enum TankCategory {HeavyTank, ScoutTank, MortarTank, SniperTank};
+    public enum TankCategory { HeavyTank, ScoutTank, MortarTank, SniperTank };
     public TankCategory tankType;
     public ThirdPersonMovement player;
     public int AmmoStart = 100;
@@ -14,18 +14,18 @@ public class Ammo: MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").GetComponent<ThirdPersonMovement>();
-        switch(tankType)
-            {
-                case TankCategory.HeavyTank:
+        switch (tankType)
+        {
+            case TankCategory.HeavyTank:
                 break;
 
-                 case TankCategory.ScoutTank:
+            case TankCategory.ScoutTank:
                 break;
 
-                case TankCategory.MortarTank:
+            case TankCategory.MortarTank:
                 break;
 
-                case TankCategory.SniperTank:
+            case TankCategory.SniperTank:
                 break;
         }
     }
@@ -43,7 +43,7 @@ public class Ammo: MonoBehaviour
             player.ammoUp = false;
             if (AmmoV < AmmoStart)
             {
-                if(AmmoV + 25 > AmmoStart)
+                if (AmmoV + 25 > AmmoStart)
                 {
                     GetMaxAMMO();
                 }
@@ -51,7 +51,7 @@ public class Ammo: MonoBehaviour
                 {
                     GetAMMO(25);
                 }
-                
+
             }
 
         }
