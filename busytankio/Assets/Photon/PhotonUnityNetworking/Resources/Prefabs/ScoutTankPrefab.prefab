@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 7510168614003398035}
   - component: {fileID: 1381612180777589628}
   - component: {fileID: 6733007433485552831}
+  - component: {fileID: 2871419609883127034}
   m_Layer: 0
   m_Name: ScoutTankPrefab
   m_TagString: Player
@@ -112,7 +113,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4599328713778780906}
-  m_LocalRotation: {x: -0, y: -0.68456894, z: -0, w: 0.7289481}
+  m_LocalRotation: {x: 0, y: -0.6845662, z: 0, w: 0.7289507}
   m_LocalPosition: {x: 9.22, y: 4.4799995, z: -9.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -166,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   range: 100
+  hporsp: {fileID: 2871419609883127034}
   player: {fileID: 4599328713778780906}
   particalsystem: {fileID: 5663482318320016756}
   impactEffect: {fileID: 5663482318320016754}
@@ -182,12 +184,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae33e03d3d9d604d88cd2d384cae61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 15
   turnspeed: 90
   gravitymultiplier: 10
   numPlayer: 1
   myCam: {fileID: 1456204789438579883}
   myAL: {fileID: 9119900867284897869}
+  shildUp: 0
+  ammoUp: 0
+  healthUp: 0
 --- !u!114 &1381612180777589628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +232,26 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
+--- !u!114 &2871419609883127034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599328713778780906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1b71e8596dd6b489013fea32fa1a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHP: 100
+  playerSP: 0
+  playerAM: 50
+  playerDamage: 2
+  sp: {fileID: 0}
+  hp: {fileID: 0}
+  healthBar: {fileID: 0}
+  shieldBar: {fileID: 0}
 --- !u!1 &5663482317255368456
 GameObject:
   m_ObjectHideFlags: 0

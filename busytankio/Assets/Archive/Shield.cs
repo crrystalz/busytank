@@ -8,12 +8,12 @@ public class Shield : MonoBehaviour
     public int maxHP1 = 100;
     public int currentHealth1;
 
-    public HealthBar healthBar1;
+    public HealthBar shieldBar;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth1 = maxHP1;
-        healthBar1.SetMaxHP(maxHP1);
+        shieldBar.SetMaxHP(maxHP1);
         player = GameObject.Find("Player").GetComponent<ThirdPersonMovement>();
 
     }
@@ -51,19 +51,19 @@ public class Shield : MonoBehaviour
     {
         currentHealth1 -= damage;
 
-        healthBar1.SetHP(currentHealth1);
+        shieldBar.SetHP(currentHealth1);
     }
 
     void GetSP(int heal)
     {
         currentHealth1 += heal;
 
-        healthBar1.SetHP(currentHealth1);
+        shieldBar.SetHP(currentHealth1);
     }
     void GetMaxSP()
     {
         currentHealth1 += 100 - currentHealth1;
 
-        healthBar1.SetHP(currentHealth1);
+        shieldBar.SetHP(currentHealth1);
     }
 }

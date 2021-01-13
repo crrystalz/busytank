@@ -13,6 +13,12 @@ public class Movement : MonoBehaviour
     private PhotonView PV;
     public Camera myCam;
     public AudioListener myAL;
+
+    
+
+    public bool shildUp = false;
+    public bool ammoUp = false;
+    public bool healthUp = false;
     // Start is called before the first frame update
     void Start()
     {

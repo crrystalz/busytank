@@ -4,46 +4,27 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Ammo: MonoBehaviour
 {
-    public enum TankCategory {HeavyTank, ScoutTank, MortarTank, SniperTank};
-    public TankCategory tankType;
-    public ThirdPersonMovement player;
+    public Movement ammo;
     public int AmmoStart = 100;
-    public int AmmoV = 100;
+    public HPSPAM AmmoV;
     public Text ammotext;
 
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<ThirdPersonMovement>();
-        switch(tankType)
-            {
-                case TankCategory.HeavyTank:
-                break;
-
-                 case TankCategory.ScoutTank:
-                break;
-
-                case TankCategory.MortarTank:
-                break;
-
-                case TankCategory.SniperTank:
-                break;
-        }
+        AmmoV = GameObject.Find("ScoutTankPrefab(Clone)").GetComponent<HPSPAM>();
+        ammo = GameObject.Find("ScoutTankPrefab(Clone)").GetComponent<Movement>();
     }
     void Update()
     {
-        ammotext.text = AmmoV + " / " + AmmoStart;
+        ammotext.text = AmmoV.playerAM + " / " + AmmoStart;
 
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            AmmoV--;
-        }
 
-        if (player.ammoUp == true)
+        if (ammo.ammoUp == true)
         {
-            player.ammoUp = false;
-            if (AmmoV < AmmoStart)
+            
+            if (AmmoV.playerAM < AmmoStart)
             {
-                if(AmmoV + 25 > AmmoStart)
+                if(AmmoV.playerAM + 25 > AmmoStart)
                 {
                     GetMaxAMMO();
                 }
@@ -53,18 +34,19 @@ public class Ammo: MonoBehaviour
                 }
                 
             }
+            ammo.ammoUp = false;
 
         }
     }
 
     void GetAMMO(int bullets)
     {
-        AmmoV += bullets;
+        AmmoV.playerAM += bullets;
 
     }
     void GetMaxAMMO()
     {
-        AmmoV += AmmoStart - AmmoV;
+        AmmoV.playerAM += AmmoStart - AmmoV.playerAM;
 
     }
 }

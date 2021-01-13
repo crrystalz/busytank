@@ -1062,4 +1062,4 @@ MonoBehaviour:
   playerCountDisplay: {fileID: 168490481}
   countdownDisplay: {fileID: 1585249148}
   maxWaitTime: 30
-  maxFullGameTime: 0
+  maxFullGameTime: 5
