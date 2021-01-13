@@ -2,29 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Ammo: MonoBehaviour
+public class Ammo : MonoBehaviour
 {
-    public Movement ammo;
+    public enum TankCategory { HeavyTank, ScoutTank, MortarTank, SniperTank };
+    public TankCategory tankType;
+    public ThirdPersonMovement player;
     public int AmmoStart = 100;
-    public HPSPAM AmmoV;
+    public int AmmoV = 100;
     public Text ammotext;
 
     void Start()
     {
-        AmmoV = GameObject.Find("ScoutTankPrefab(Clone)").GetComponent<HPSPAM>();
-        ammo = GameObject.Find("ScoutTankPrefab(Clone)").GetComponent<Movement>();
+        player = GameObject.Find("Player").GetComponent<ThirdPersonMovement>();
+        switch (tankType)
+        {
+            case TankCategory.HeavyTank:
+                break;
+
+            case TankCategory.ScoutTank:
+                break;
+
+            case TankCategory.MortarTank:
+                break;
+
+            case TankCategory.SniperTank:
+                break;
+        }
     }
     void Update()
     {
-        ammotext.text = AmmoV.playerAM + " / " + AmmoStart;
+        ammotext.text = AmmoV + " / " + AmmoStart;
 
-
-        if (ammo.ammoUp == true)
+        if (Input.GetKeyDown(KeyCode.D))
         {
-            
-            if (AmmoV.playerAM < AmmoStart)
+            AmmoV--;
+        }
+
+        if (player.ammoUp == true)
+        {
+            player.ammoUp = false;
+            if (AmmoV < AmmoStart)
             {
-                if(AmmoV.playerAM + 25 > AmmoStart)
+                if (AmmoV + 25 > AmmoStart)
                 {
                     GetMaxAMMO();
                 }
@@ -32,21 +51,20 @@ public class Ammo: MonoBehaviour
                 {
                     GetAMMO(25);
                 }
-                
+
             }
-            ammo.ammoUp = false;
 
         }
     }
 
     void GetAMMO(int bullets)
     {
-        AmmoV.playerAM += bullets;
+        AmmoV += bullets;
 
     }
     void GetMaxAMMO()
     {
-        AmmoV.playerAM += AmmoStart - AmmoV.playerAM;
+        AmmoV += AmmoStart - AmmoV;
 
     }
 }

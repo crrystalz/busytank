@@ -20,8 +20,7 @@ public class HPSPAM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shieldBar = GameObject.Find("ScoutTankPrefab(Clone)").GetComponent<Movement>();
-        healthBar = GameObject.Find("ScoutTankPrefab(Clone)").GetComponent<Movement>();
+        
         currentHP = playerHP;
         currentSP = playerSP;
         sp.SetMaxHP(playerSP);
@@ -31,6 +30,8 @@ public class HPSPAM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        shieldBar = GameObject.Find("ScoutTankPrefab(Clone)").GetComponent<Movement>();
+        healthBar = GameObject.Find("ScoutTankPrefab(Clone)").GetComponent<Movement>();
         if (shieldBar.shildUp == true)
         {
             shieldBar.shildUp = false;
