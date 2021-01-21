@@ -1,29 +1,37 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    public ThirdPersonMovement player;
+    public Movement player;
     public int maxHP1 = 100;
     public int currentHealth1;
-
+    public int damage;
+    private PhotonView PV;
     public HealthBar healthBar1;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth1 = maxHP1;
         healthBar1.SetMaxHP(maxHP1);
-        player = GameObject.Find("Player").GetComponent<ThirdPersonMovement>();
-
+        healthBar1 = GameObject.Find("SheildBar").GetComponent<HealthBar>();
+        PV = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (PV.IsMine)
         {
-            TakeDamage1(1);
+            player = GameObject.Find("ScoutTankPrefab").GetComponent<Movement>();
+            healthBar1 = GameObject.Find("SheildBar").GetComponent<HealthBar>();
+        }
+        else
+        {
+            player = GameObject.Find("ScoutTankPrefab").GetComponent<Movement>();
+            healthBar1 = GameObject.Find("SheildBar").GetComponent<HealthBar>();
         }
 
         if (player.shildUp == true)
@@ -47,7 +55,7 @@ public class Shield : MonoBehaviour
 
     }
 
-    void TakeDamage1(int damage)
+    public void TakeDamage1(int damage)
     {
         currentHealth1 -= damage;
 

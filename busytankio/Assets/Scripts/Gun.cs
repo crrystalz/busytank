@@ -8,7 +8,8 @@ public class Gun : MonoBehaviour
     public float damage = 10f;
     public float range = 100f;
 
-    public HPSPAM hporsp;
+    public Health health;
+    public Shield shield;
     public GameObject player;
     public ParticleSystem particalsystem;
     public GameObject impactEffect;
@@ -28,18 +29,20 @@ public class Gun : MonoBehaviour
         
         if (Input.GetButton("Fire1"))
         {
-            if (hporsp.playerAM > 0)
-            {
-                PV.RPC("RPC_Shoot", RpcTarget.All);
-            }
-            else
-            {
-                Debug.Log("No more bullets! Go find some!");
+            PV.RPC("RPC_Shoot", RpcTarget.All);
+            //Fix later
+            //if (hporsp.playerAM > 0)
+            //{
+            //PV.RPC("RPC_Shoot", RpcTarget.All);
+            //}
+            //else
+            //{
+             //   Debug.Log("No more bullets! Go find some!");
 
 
             
                     
-            }
+            //}
         }
 
     }
@@ -47,7 +50,8 @@ public class Gun : MonoBehaviour
     void RPC_Shoot ()
     {
         particalsystem.Play();
-        hporsp.playerAM -= 1;
+        //Also Fix later
+        //hporsp.playerAM -= 1;
         RaycastHit hit;
         if (Physics.Raycast(player.transform.position, player.transform.forward, out hit, range))
         {
@@ -56,13 +60,13 @@ public class Gun : MonoBehaviour
             HPSPAM target = hit.transform.GetComponent<HPSPAM>();
             if (hit.transform.tag == "Player")
             {
-                if(hporsp.playerSP > 0)
+                if(shield.currentHealth1 > 0)
                 {
-                    hporsp.TakeDamageSP(hporsp.playerDamage);
+                    shield.TakeDamage1(shield.damage);
                 }
                 else
                 {
-                    hporsp.TakeDamageHP(hporsp.playerDamage);
+                    health.TakeDamage(health.damage);
                 }
                 
             }

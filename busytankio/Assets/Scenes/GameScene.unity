@@ -730,7 +730,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 536916268}
-  - component: {fileID: 536916267}
   m_Layer: 0
   m_Name: Shield Bar
   m_TagString: shild
@@ -738,26 +737,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &536916267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 536916266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd1b71e8596dd6b489013fea32fa1a1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerHP: 100
-  playerSP: 0
-  playerAM: 0
-  playerDamage: 2
-  sp: {fileID: 0}
-  hp: {fileID: 0}
-  healthBar: {fileID: 0}
-  shieldBar: {fileID: 0}
 --- !u!4 &536916268
 Transform:
   m_ObjectHideFlags: 0

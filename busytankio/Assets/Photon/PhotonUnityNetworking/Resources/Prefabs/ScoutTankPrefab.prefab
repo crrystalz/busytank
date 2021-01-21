@@ -98,7 +98,8 @@ GameObject:
   - component: {fileID: 7510168614003398035}
   - component: {fileID: 1381612180777589628}
   - component: {fileID: 6733007433485552831}
-  - component: {fileID: 2871419609883127034}
+  - component: {fileID: 1465913881829397432}
+  - component: {fileID: 883762584087656030}
   m_Layer: 0
   m_Name: ScoutTankPrefab
   m_TagString: Player
@@ -167,7 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   range: 100
-  hporsp: {fileID: 2871419609883127034}
+  health: {fileID: 0}
+  shield: {fileID: 0}
   player: {fileID: 4599328713778780906}
   particalsystem: {fileID: 5663482318320016756}
   impactEffect: {fileID: 5663482318320016754}
@@ -232,7 +234,7 @@ MonoBehaviour:
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
   m_UseLocal: 1
---- !u!114 &2871419609883127034
+--- !u!114 &1465913881829397432
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,17 +243,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 4599328713778780906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd1b71e8596dd6b489013fea32fa1a1c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fa12105ebec8434a9daf92f905176b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHP: 100
-  playerSP: 0
-  playerAM: 50
-  playerDamage: 2
-  sp: {fileID: 0}
-  hp: {fileID: 0}
+  player: {fileID: 7510168614003398035}
+  maxHP: 100
+  currentHealth: 0
+  damage: 0
   healthBar: {fileID: 0}
-  shieldBar: {fileID: 0}
+--- !u!114 &883762584087656030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599328713778780906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54746c30f64a8554b87a541514cd675c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 7510168614003398035}
+  maxHP1: 100
+  currentHealth1: 0
+  damage: 0
+  healthBar1: {fileID: 0}
 --- !u!1 &5663482317255368456
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +328,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0dbd4e108b942604dbe508bf62422bf5, type: 2}
+  - {fileID: 2100000, guid: 6b6e48e2837fb0748b07ce3a8d8ff75f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
