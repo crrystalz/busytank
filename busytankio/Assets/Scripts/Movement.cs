@@ -19,18 +19,22 @@ public class Movement : MonoBehaviour
     public bool shildUp = false;
     public bool ammoUp = false;
     public bool healthUp = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        PV = GetComponent<PhotonView>();
-        rb = GetComponent<Rigidbody>();
+        TankAttributes tankAttributes = GetComponent<TankAttributes>();
+        speed = tankAttributes.Speed;
+        // PV = GetComponent<PhotonView>();
+        // rb = GetComponent<Rigidbody>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        // IMPORTANT!!! RIGHT = FORWARD  LEFT = BACKWARD !!!!!
+        IMPORTANT!!! RIGHT = FORWARD  LEFT = BACKWARD !!!!!
         if (PV.IsMine)
         {
             Move();
@@ -41,8 +45,6 @@ public class Movement : MonoBehaviour
             Destroy(myCam);
             Destroy(myAL);
         }
-        
-      
     }
 
     void Move()
@@ -50,17 +52,22 @@ public class Movement : MonoBehaviour
         
         if (Input.GetKey(KeyCode.W))
         {
-            //rb.AddRelativeForce(Vector3.forward * speed);
+            rb.AddRelativeForce(Vector3.forward * speed);
             rb.velocity = transform.forward * speed;
+            // transform.Translate(Vector3.forward * Time.deltaTime * speed);
+
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            //rb.AddRelativeForce(Vector3.back * speed);
+            rb.AddRelativeForce(Vector3.back * speed);
             rb.velocity = transform.forward * -speed;
+            // transform.Translate(Vector3.forward * Time.deltaTime * -speed);
+
         }
+
         Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity);
         localVelocity.z = 0;
-        //rb.velocity = transform.TransformDirection(localVelocity);
+        rb.velocity = transform.TransformDirection(localVelocity);
 
     }
 
@@ -68,13 +75,13 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
-            //rb.AddTorque(Vector3.up * turnspeed);
-            transform.Rotate(Vector3.up, turnspeed * Time.deltaTime);
+            rb.AddTorque(Vector3.up * turnspeed);
+            // transform.Rotate(Vector3.up, turnspeed * Time.deltaTime);
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            //rb.AddTorque(-Vector3.up * turnspeed);
-            transform.Rotate(Vector3.down, turnspeed * Time.deltaTime);
+            rb.AddTorque(-Vector3.up * turnspeed);
+            // transform.Rotate(Vector3.down, turnspeed * Time.deltaTime);
         }
     }
 }

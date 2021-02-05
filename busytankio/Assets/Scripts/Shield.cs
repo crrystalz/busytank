@@ -6,17 +6,20 @@ using UnityEngine;
 public class Shield : MonoBehaviour
 {
     public Movement player;
-    public int maxHP1 = 100;
-    public int currentHealth1;
+    public int maxShield = 8;
+    public int currentShield;
     public int damage;
     private PhotonView PV;
-    public HealthBar healthBar1;
+    public HealthBar shieldBar;
+
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth1 = maxHP1;
-        healthBar1.SetMaxHP(maxHP1);
-        healthBar1 = GameObject.Find("SheildBar").GetComponent<HealthBar>();
+        TankAttributes tankAttributes = GetComponent<TankAttributes>();
+        maxShield = tankAttributes.Shield;
+        currentShield = maxShield;
+
+        shieldBar.SetMaxHP(maxShield);
         PV = GetComponent<PhotonView>();
     }
 
@@ -26,20 +29,20 @@ public class Shield : MonoBehaviour
         if (PV.IsMine)
         {
             player = GameObject.Find("ScoutTankPrefab").GetComponent<Movement>();
-            healthBar1 = GameObject.Find("SheildBar").GetComponent<HealthBar>();
+            shieldBar = GameObject.Find("ShieldBar").GetComponent<HealthBar>();
         }
         else
         {
             player = GameObject.Find("ScoutTankPrefab").GetComponent<Movement>();
-            healthBar1 = GameObject.Find("SheildBar").GetComponent<HealthBar>();
+            shieldBar = GameObject.Find("ShieldBar").GetComponent<HealthBar>();
         }
 
         if (player.shildUp == true)
         {
             player.shildUp = false;
-            if (currentHealth1 < 100)
+            if (currentShield < 100)
             {
-                if (currentHealth1 + 25 > 100)
+                if (currentShield + 25 > 100)
                 {
                     GetMaxSP();
                 }
@@ -55,23 +58,28 @@ public class Shield : MonoBehaviour
 
     }
 
-    public void TakeDamage1(int damage)
+    public void TakeDamage(int damage)
     {
-        currentHealth1 -= damage;
+        currentShield -= damage;
 
-        healthBar1.SetHP(currentHealth1);
+        shieldBar.SetHP(currentShield);
     }
 
     void GetSP(int heal)
     {
-        currentHealth1 += heal;
+        currentShield += heal;
 
-        healthBar1.SetHP(currentHealth1);
+        shieldBar.SetHP(currentShield);
     }
+
     void GetMaxSP()
     {
-        currentHealth1 += 100 - currentHealth1;
+        currentShield += 100 - currentShield;
 
-        healthBar1.SetHP(currentHealth1);
+        shieldBar.SetHP(currentShield);
+    }
+
+    void SetMaxSP(int max) {
+        maxShield = max;
     }
 }

@@ -10,6 +10,7 @@ public class Gun : MonoBehaviour
 
     public Health health;
     public Shield shield;
+
     public GameObject player;
     public ParticleSystem particalsystem;
     public GameObject impactEffect;
@@ -19,6 +20,9 @@ public class Gun : MonoBehaviour
 
     void Start()
     {
+        health = GetComponent<Health>();
+        shield = GetComponent<Shield>();
+
         PhotonNetwork.ConnectUsingSettings();
         PV = GetComponent<PhotonView>();
     }
@@ -46,6 +50,7 @@ public class Gun : MonoBehaviour
         }
 
     }
+
     [PunRPC]
     void RPC_Shoot ()
     {
@@ -60,9 +65,9 @@ public class Gun : MonoBehaviour
             HPSPAM target = hit.transform.GetComponent<HPSPAM>();
             if (hit.transform.tag == "Player")
             {
-                if(shield.currentHealth1 > 0)
+                if(shield.currentShield > 0)
                 {
-                    shield.TakeDamage1(shield.damage);
+                    shield.TakeDamage(shield.damage);
                 }
                 else
                 {

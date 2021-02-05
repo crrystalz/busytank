@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 6733007433485552831}
   - component: {fileID: 1465913881829397432}
   - component: {fileID: 883762584087656030}
+  - component: {fileID: -4321538242838108075}
   m_Layer: 0
   m_Name: ScoutTankPrefab
   m_TagString: Player
@@ -268,6 +269,19 @@ MonoBehaviour:
   currentHealth1: 0
   damage: 0
   healthBar1: {fileID: 0}
+--- !u!114 &-4321538242838108075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599328713778780906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dbf214c068064d7e8b13aaf2600688d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankType: 1
 --- !u!1 &5663482317255368456
 GameObject:
   m_ObjectHideFlags: 0
