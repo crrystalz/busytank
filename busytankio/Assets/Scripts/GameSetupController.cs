@@ -13,6 +13,6 @@ public class GameSetupController : MonoBehaviour
     private void CreatePlayer()
     {
         Debug.Log("Loading Player.");
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ScoutTankPrefab"), Vector3.zero, Quaternion.identity);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ScoutTankPrefab"), Vector3.up*10, Quaternion.identity);
     }
 }
