@@ -1,6 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+
+public enum TankType
+{
+    Scout,
+    Heavy,
+    Sniper,
+    Mortar
+};
 public class TankAttributes : MonoBehaviour
 {
     public TankType tankType = new TankType();
