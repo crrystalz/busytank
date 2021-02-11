@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class HPSPAM : MonoBehaviour
@@ -17,18 +18,24 @@ public class HPSPAM : MonoBehaviour
 
     public Movement healthBar;
     public Movement shieldBar;
+
+    public PhotonView PV;
     // Start is called before the first frame update
     void Start()
     {
-        List < HealthBar > bars = new List<HealthBar>(FindObjectsOfType<HealthBar>());
-        sp = bars.Find((bar) =>
+        if (PV.IsMine)
         {
-            return bar.name.ToLower().Contains("sheild");
-        });
-        hp = bars.Find((bar) =>
-        {
-            return bar.name.ToLower().Contains("health");
-        });
+            List < HealthBar > bars = new List<HealthBar>(FindObjectsOfType<HealthBar>());
+            sp = bars.Find((bar) =>
+            {
+                return bar.name.ToLower().Contains("sheild");
+            });
+            hp = bars.Find((bar) =>
+            {
+                return bar.name.ToLower().Contains("health");
+            });
+        }
+        
         currentHP = playerHP;
         currentSP = playerSP;
         sp.SetMaxHP(playerSP);

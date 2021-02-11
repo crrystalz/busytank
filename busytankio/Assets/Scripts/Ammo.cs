@@ -6,14 +6,19 @@ public class Ammo : MonoBehaviour
 {
     public enum TankCategory { HeavyTank, ScoutTank, MortarTank, SniperTank };
     public TankCategory tankType;
-    public ThirdPersonMovement player;
+    public Movement player;
     public int AmmoStart = 100;
     public int AmmoV = 100;
     public Text ammotext;
 
     void Start()
     {
-        player = GameObject.Find("Player").GetComponent<ThirdPersonMovement>();
+        /*List<Movement> bars = new List<Movement>(FindObjectsOfType<Movement>());
+        player = bars.Find((bar) =>
+        {
+            return bar.name.ToLower().Contains("");
+        });
+        */
         switch (tankType)
         {
             case TankCategory.HeavyTank:

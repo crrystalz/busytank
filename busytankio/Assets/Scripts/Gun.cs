@@ -25,20 +25,22 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetButton("Fire1"))
+        if (PV.IsMine)
         {
-            if (hporsp.playerAM > 0)
+            if (Input.GetButton("Fire1"))
             {
-                PV.RPC("RPC_Shoot", RpcTarget.All);
-            }
-            else
-            {
-                Debug.Log("No more bullets! Go find some!");
+                if (hporsp.playerAM > 0)
+                {
+                    PV.RPC("RPC_Shoot", RpcTarget.All);
+                }
+                else
+                {
+                    Debug.Log("No more bullets! Go find some!");
 
 
-            
-                    
+
+
+                }
             }
         }
 

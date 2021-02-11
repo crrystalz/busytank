@@ -250,8 +250,9 @@ MonoBehaviour:
   playerDamage: 2
   sp: {fileID: 0}
   hp: {fileID: 0}
-  healthBar: {fileID: 0}
-  shieldBar: {fileID: 0}
+  healthBar: {fileID: 7510168614003398035}
+  shieldBar: {fileID: 7510168614003398035}
+  PV: {fileID: 1381612180777589628}
 --- !u!1 &5663482317255368456
 GameObject:
   m_ObjectHideFlags: 0

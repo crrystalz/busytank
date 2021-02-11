@@ -6561,6 +6561,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1166540125 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7510168614003398035, guid: 3b35e6c6355326b41ae870e174bc3dc1, type: 3}
+  m_PrefabInstance: {fileID: 1833574074}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae33e03d3d9d604d88cd2d384cae61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1223691748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6711,9 +6722,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df13e3e086081249babde038e741f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: {fileID: 0}
+  tankType: 0
+  player: {fileID: 1166540125}
   AmmoStart: 100
-  AmmoV: {fileID: 0}
+  AmmoV: 100
   ammotext: {fileID: 1299645758}
 --- !u!114 &1299645758
 MonoBehaviour:
