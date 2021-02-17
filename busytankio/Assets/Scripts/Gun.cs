@@ -27,7 +27,7 @@ public class Gun : MonoBehaviour
     {
         if (PV.IsMine)
         {
-            if (Input.GetButton("Fire1"))
+            if (Input.GetMouseButtonDown(0))
             {
                 if (hporsp.playerAM > 0)
                 {
@@ -58,13 +58,13 @@ public class Gun : MonoBehaviour
             HPSPAM target = hit.transform.GetComponent<HPSPAM>();
             if (hit.transform.tag == "Player")
             {
-                if(hporsp.playerSP > 0)
+                if(hit.transform.gameObject.GetComponent<HPSPAM>().playerSP > 0)
                 {
-                    hporsp.TakeDamageSP(hporsp.playerDamage);
+                    hit.transform.gameObject.GetComponent<HPSPAM>().TakeDamageSP(hporsp.playerDamage);
                 }
                 else
                 {
-                    hporsp.TakeDamageHP(hporsp.playerDamage);
+                    hit.transform.gameObject.GetComponent<HPSPAM>().TakeDamageHP(hporsp.playerDamage);
                 }
                 
             }
