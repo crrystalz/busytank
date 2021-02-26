@@ -13,12 +13,12 @@ public class Ammo : MonoBehaviour
 
     void Start()
     {
-        /*List<Movement> bars = new List<Movement>(FindObjectsOfType<Movement>());
+        List <Movement> bars = new List<Movement>(FindObjectsOfType<Movement>());
         player = bars.Find((bar) =>
         {
-            return bar.name.ToLower().Contains("");
+            return bar.name.ToLower().Contains("ammo");
         });
-        */
+
         switch (tankType)
         {
             case TankCategory.HeavyTank:
