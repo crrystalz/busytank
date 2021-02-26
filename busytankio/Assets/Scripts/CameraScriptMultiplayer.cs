@@ -26,8 +26,7 @@ public class CameraScriptMultiplayer : MonoBehaviour
     {
         if (PV.IsMine)
         {
-            Move();
-            Turn();
+            stall = 1;
         }
         else
         {
@@ -35,7 +34,7 @@ public class CameraScriptMultiplayer : MonoBehaviour
             Destroy(myAL);
         }
     }
-
+    /*
     void Move()
     {
 
@@ -68,4 +67,5 @@ public class CameraScriptMultiplayer : MonoBehaviour
             transform.Rotate(Vector3.down, turnspeed * Time.deltaTime);
         }
     }
+    */
 }
