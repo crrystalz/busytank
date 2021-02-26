@@ -46,8 +46,8 @@ public class HPSPAM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shieldBar = GameObject.Find("ScoutTank(2Part)").GetComponent<Movement>();
-        healthBar = GameObject.Find("ScoutTank(2Part)").GetComponent<Movement>();
+        shieldBar = GameObject.Find("ScoutTankPrefab").GetComponent<Movement>();
+        healthBar = GameObject.Find("ScoutTankPrefab").GetComponent<Movement>();
         if (shieldBar.shildUp == true)
         {
             shieldBar.shildUp = false;
