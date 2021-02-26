@@ -611,7 +611,7 @@ GameObject:
   - component: {fileID: 296192133}
   - component: {fileID: 296192132}
   m_Layer: 5
-  m_Name: Ammo Count
+  m_Name: AmCount
   m_TagString: ammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1929,7 +1929,7 @@ GameObject:
   - component: {fileID: 1095789351}
   m_Layer: 5
   m_Name: HealthBar
-  m_TagString: Untagged
+  m_TagString: health
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2268,7 +2268,7 @@ GameObject:
   - component: {fileID: 1284496356}
   m_Layer: 5
   m_Name: SheildBar
-  m_TagString: Untagged
+  m_TagString: shild
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2288,24 +2288,24 @@ MonoBehaviour:
   slider: {fileID: 1284496358}
   Color:
     serializedVersion: 2
-    key0: {r: 0, g: 1, b: 0.9725491, a: 1}
-    key1: {r: 0, g: 1, b: 0.9739628, a: 1}
-    key2: {r: 0, g: 1, b: 0.9739628, a: 1}
-    key3: {r: 0, g: 1, b: 0.9739628, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
+    key0: {r: 0.1137255, g: 0.454902, b: 0.9058824, a: 1}
+    key1: {r: 0.11448912, g: 0.45635238, b: 0.9056604, a: 1}
+    key2: {r: 0, g: 0.6095848, b: 1, a: 1}
+    key3: {r: 0, g: 0.8298557, b: 1, a: 0}
+    key4: {r: 0, g: 1, b: 0.9739628, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 65535
-    ctime2: 65535
-    ctime3: 65535
-    ctime4: 0
+    ctime1: 16384
+    ctime2: 32768
+    ctime3: 49151
+    ctime4: 65535
     ctime5: 0
     ctime6: 0
     ctime7: 0
     atime0: 0
-    atime1: 1735
+    atime1: 33153
     atime2: 65535
     atime3: 0
     atime4: 0
@@ -2313,7 +2313,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 1
-    m_NumColorKeys: 2
+    m_NumColorKeys: 5
     m_NumAlphaKeys: 3
   fill: {fileID: 146980261}
 --- !u!224 &1284496357
@@ -2792,7 +2792,7 @@ GameObject:
   - component: {fileID: 1471889269}
   m_Layer: 0
   m_Name: HpBar
-  m_TagString: shild
+  m_TagString: health
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

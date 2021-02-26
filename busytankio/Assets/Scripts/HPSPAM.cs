@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using System.IO;
 using UnityEngine;
 
 public class HPSPAM : MonoBehaviour
@@ -141,13 +142,22 @@ public class HPSPAM : MonoBehaviour
         currentHP -= damage;
 
         hp.SetHP(currentHP);
+        if (PV.IsMine)
+        {
+            if (currentHP == 0)
+            {
+                PhotonNetwork.Destroy(gameObject);
+                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "CamCam"), Vector3.zero, Quaternion.identity);
+            }
+        }
+        
     }
 
     public void TakeDamageSP(int damage)
     {
         currentSP -= damage;
 
-        sp.SetHP(currentSP);
+        sp.SetHP(currentSP); 
     }
 }
 
