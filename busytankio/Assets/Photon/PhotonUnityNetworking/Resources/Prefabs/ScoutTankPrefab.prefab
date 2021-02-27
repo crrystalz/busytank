@@ -190,9 +190,6 @@ MonoBehaviour:
   numPlayer: 1
   myCam: {fileID: 1456204789438579883}
   myAL: {fileID: 9119900867284897869}
-  shildUp: 0
-  ammoUp: 0
-  healthUp: 0
 --- !u!114 &1381612180777589628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,8 +247,10 @@ MonoBehaviour:
   playerDamage: 2
   sp: {fileID: 0}
   hp: {fileID: 0}
-  healthBar: {fileID: 7510168614003398035}
-  shieldBar: {fileID: 7510168614003398035}
+  am: {fileID: 0}
+  shildUp: 0
+  ammoUp: 0
+  healthUp: 0
   PV: {fileID: 1381612180777589628}
 --- !u!1 &5663482317255368456
 GameObject:

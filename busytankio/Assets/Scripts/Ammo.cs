@@ -6,7 +6,7 @@ public class Ammo : MonoBehaviour
 {
     public enum TankCategory { HeavyTank, ScoutTank, MortarTank, SniperTank };
     public TankCategory tankType;
-    public Movement player;
+    
     public int AmmoStart = 100;
     public int AmmoV = 100;
     public Text ammotext;

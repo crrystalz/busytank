@@ -540,7 +540,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8bcba2665c11c3444bf80798799024dc, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8bcba2665c11c3444bf80798799024dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -673,7 +673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &296192131
 RectTransform:
   m_ObjectHideFlags: 0
@@ -943,7 +943,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tankType: 0
-  player: {fileID: 0}
   AmmoStart: 100
   AmmoV: 100
   ammotext: {fileID: 387976398}
@@ -1026,7 +1025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8bcba2665c11c3444bf80798799024dc, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8bcba2665c11c3444bf80798799024dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1455,7 +1454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0803b66c6c7bd2a42b0811d5d7283317, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0803b66c6c7bd2a42b0811d5d7283317, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1593,7 +1592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b161d9a7cb851b4e992ed7e7d604b67, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7b161d9a7cb851b4e992ed7e7d604b67, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2112,7 +2111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8bcba2665c11c3444bf80798799024dc, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8bcba2665c11c3444bf80798799024dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3593,7 +3592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d34965caa46e2ea4bb3bdd62522f95cf, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d34965caa46e2ea4bb3bdd62522f95cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4082,7 +4081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 69d6b154bc7f73441be0017078e95e49, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 69d6b154bc7f73441be0017078e95e49, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
