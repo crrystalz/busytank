@@ -33,36 +33,6 @@ public class Ammo : MonoBehaviour
     void Update()
     {
         ammotext.text = AmmoV + " / " + AmmoStart;
-
-        
-
-        if (player.ammoUp == true)
-        {
-            player.ammoUp = false;
-            if (AmmoV < AmmoStart)
-            {
-                if (AmmoV + 25 > AmmoStart)
-                {
-                    GetMaxAMMO();
-                }
-                else
-                {
-                    GetAMMO(25);
-                }
-
-            }
-
-        }
     }
 
-    void GetAMMO(int bullets)
-    {
-        AmmoV += bullets;
-
-    }
-    void GetMaxAMMO()
-    {
-        AmmoV += AmmoStart - AmmoV;
-
-    }
 }
