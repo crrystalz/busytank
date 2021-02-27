@@ -13,11 +13,7 @@ public class Ammo : MonoBehaviour
 
     void Start()
     {
-        List <Movement> bars = new List<Movement>(FindObjectsOfType<Movement>());
-        player = bars.Find((bar) =>
-        {
-            return bar.name.ToLower().Contains("ammo");
-        });
+        
 
         switch (tankType)
         {
@@ -38,10 +34,7 @@ public class Ammo : MonoBehaviour
     {
         ammotext.text = AmmoV + " / " + AmmoStart;
 
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            AmmoV--;
-        }
+        
 
         if (player.ammoUp == true)
         {

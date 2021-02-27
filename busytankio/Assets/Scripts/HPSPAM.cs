@@ -16,9 +16,11 @@ public class HPSPAM : MonoBehaviour
 
     public ShieldBar sp;
     public HealthBar hp;
+    public Ammo am;
 
-    public Movement healthBar;
-    public Movement shieldBar;
+    public bool shildUp = false;
+    public bool ammoUp = false;
+    public bool healthUp = false;
 
     public PhotonView PV;
     // Start is called before the first frame update
@@ -26,16 +28,9 @@ public class HPSPAM : MonoBehaviour
     {
         if (PV.IsMine)
         {
-            List < HealthBar > bars = new List<HealthBar>(FindObjectsOfType<HealthBar>());
-            sp = bars.Find((bar) =>
-            {
-                return bar.name.ToLower().Contains("sheild");
-            });
-            hp = bars.Find((bar) =>
-            {
-                return bar.name.ToLower().Contains("health");
-            });
-            sp = 
+            am = FindObjectOfType<Ammo>();
+            hp = FindObjectOfType<HealthBar>();
+            sp = FindObjectOfType<ShieldBar>();
         }
         
         currentHP = playerHP;
@@ -47,11 +42,10 @@ public class HPSPAM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shieldBar = GameObject.Find("ScoutTankPrefab").GetComponent<Movement>();
-        healthBar = GameObject.Find("ScoutTankPrefab").GetComponent<Movement>();
-        if (shieldBar.shildUp == true)
+        
+        if (shildUp == true)
         {
-            shieldBar.shildUp = false;
+            shildUp = false;
             if (currentSP < 100)
             {
                 if (currentSP + 25 > 100)
@@ -67,9 +61,9 @@ public class HPSPAM : MonoBehaviour
 
         }
 
-        if (healthBar.healthUp == true)
+        if (healthUp == true)
         {
-            healthBar.healthUp = false;
+            healthUp = false;
             if (currentHP < 100)
             {
                 if (currentHP + 25 > 100)
@@ -85,6 +79,24 @@ public class HPSPAM : MonoBehaviour
 
         }
 
+        if (ammoUp == true)
+        {
+            ammoUp = false;
+            if (am.AmmoV < am.AmmoStart)
+            {
+                if (am.AmmoV + 25 > am.AmmoStart)
+                {
+                    GetMaxAMMO();
+                }
+                else
+                {
+                    GetAMMO(25);
+                }
+
+            }
+
+        }
+
     }
 
 
@@ -94,21 +106,21 @@ public class HPSPAM : MonoBehaviour
         {
             Destroy(other.gameObject);
             Debug.Log("Shield Collected");
-            healthBar.shildUp = true;
+            shildUp = true;
         }
 
         if (other.gameObject.CompareTag("health"))
         {
             Destroy(other.gameObject);
             Debug.Log("Meds Collected");
-            healthBar.healthUp = true;
+            healthUp = true;
         }
 
         if (other.gameObject.CompareTag("ammo"))
         {
             Destroy(other.gameObject);
             Debug.Log("Ammo Collected");
-            healthBar.ammoUp = true;
+            ammoUp = true;
         }
     }
 
@@ -153,12 +165,21 @@ public class HPSPAM : MonoBehaviour
         }
         
     }
-
     public void TakeDamageSP(int damage)
     {
         currentSP -= damage;
 
         sp.SetHP(currentSP); 
+    }
+    void GetAMMO(int bullets)
+    {
+        am.AmmoV += bullets;
+
+    }
+    void GetMaxAMMO()
+    {
+        am.AmmoV += am.AmmoStart - am.AmmoV;
+
     }
 }
 
