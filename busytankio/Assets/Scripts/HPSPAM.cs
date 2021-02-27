@@ -14,7 +14,7 @@ public class HPSPAM : MonoBehaviour
     private int currentHP;
     private int currentSP;
 
-    public HealthBar sp;
+    public ShieldBar sp;
     public HealthBar hp;
 
     public Movement healthBar;
@@ -35,6 +35,7 @@ public class HPSPAM : MonoBehaviour
             {
                 return bar.name.ToLower().Contains("health");
             });
+            sp = 
         }
         
         currentHP = playerHP;
