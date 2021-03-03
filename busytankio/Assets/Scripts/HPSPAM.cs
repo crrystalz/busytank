@@ -14,7 +14,10 @@ public class HPSPAM : MonoBehaviour
     private int currentHP;
     private int currentSP;
 
-    public ShieldBar sp;
+    public GameObject spobj;
+    public GameObject hpobj;
+    public GameObject amobj;
+    public HealthBar sp;
     public HealthBar hp;
     public Ammo am;
 
@@ -28,9 +31,10 @@ public class HPSPAM : MonoBehaviour
     {
         if (PV.IsMine)
         {
-            am = FindObjectOfType<Ammo>();
-            hp = FindObjectOfType<HealthBar>();
-            sp = FindObjectOfType<ShieldBar>();
+            spobj = GameObject.FindGameObjectWithTag("healthbar");
+            hpobj = GameObject.FindGameObjectWithTag("shieldbar");
+            amobj = GameObject.FindGameObjectWithTag("ammobar");
+           
         }
         
         currentHP = playerHP;
@@ -104,21 +108,21 @@ public class HPSPAM : MonoBehaviour
     {
         if (other.gameObject.CompareTag("shild"))
         {
-            Destroy(other.gameObject);
+            PhotonNetwork.Destroy(other.gameObject);
             Debug.Log("Shield Collected");
             shildUp = true;
         }
 
         if (other.gameObject.CompareTag("health"))
         {
-            Destroy(other.gameObject);
+            PhotonNetwork.Destroy(other.gameObject);
             Debug.Log("Meds Collected");
             healthUp = true;
         }
 
         if (other.gameObject.CompareTag("ammo"))
         {
-            Destroy(other.gameObject);
+            PhotonNetwork.Destroy(other.gameObject);
             Debug.Log("Ammo Collected");
             ammoUp = true;
         }
