@@ -7,6 +7,10 @@ TagManager:
   - ammo
   - shild
   - health
+  - Bullet
+  - healthbar
+  - shieldbar
+  - ammobar
   layers:
   - Default
   - TransparentFX

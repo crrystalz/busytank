@@ -17,7 +17,7 @@ public class HPSPAM : MonoBehaviour
     public GameObject spobj;
     public GameObject hpobj;
     public GameObject amobj;
-    public HealthBar sp;
+    public ShieldBar sp;
     public HealthBar hp;
     public Ammo am;
 
@@ -31,10 +31,11 @@ public class HPSPAM : MonoBehaviour
     {
         if (PV.IsMine)
         {
-            spobj = GameObject.FindGameObjectWithTag("healthbar");
-            hpobj = GameObject.FindGameObjectWithTag("shieldbar");
-            amobj = GameObject.FindGameObjectWithTag("ammobar");
-           
+            //spobj = GameObject.FindGameObjectWithTag("healthbar");
+            //hpobj = GameObject.FindGameObjectWithTag("shieldbar");
+            //amobj = GameObject.FindGameObjectWithTag("ammobar");
+            sp = FindObjectOfType<ShieldBar>();
+            hp = FindObjectOfType<HealthBar>();
         }
         
         currentHP = playerHP;
@@ -47,6 +48,7 @@ public class HPSPAM : MonoBehaviour
     void Update()
     {
         
+
         if (shildUp == true)
         {
             shildUp = false;
@@ -82,7 +84,7 @@ public class HPSPAM : MonoBehaviour
             }
 
         }
-
+        /*
         if (ammoUp == true)
         {
             ammoUp = false;
@@ -100,6 +102,7 @@ public class HPSPAM : MonoBehaviour
             }
 
         }
+        */
 
     }
 
@@ -175,6 +178,7 @@ public class HPSPAM : MonoBehaviour
 
         sp.SetHP(currentSP); 
     }
+    /*
     void GetAMMO(int bullets)
     {
         am.AmmoV += bullets;
@@ -185,5 +189,6 @@ public class HPSPAM : MonoBehaviour
         am.AmmoV += am.AmmoStart - am.AmmoV;
 
     }
+    */
 }
 

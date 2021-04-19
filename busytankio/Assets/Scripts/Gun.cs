@@ -62,7 +62,7 @@ public class Gun : MonoBehaviour
                 {
                     hit.transform.gameObject.GetComponent<HPSPAM>().TakeDamageSP(hporsp.playerDamage);
                 }
-                else
+                else if (hit.transform.gameObject.GetComponent<HPSPAM>().playerSP <= 0)
                 {
                     hit.transform.gameObject.GetComponent<HPSPAM>().TakeDamageHP(hporsp.playerDamage);
                 }
