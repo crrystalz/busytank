@@ -56,17 +56,21 @@ public class Gun : MonoBehaviour
             //Debug.Log(hit.transform.name);
 
             HPSPAM target = hit.transform.GetComponent<HPSPAM>();
+            HPSPAM enemy = hit.transform.gameObject.GetComponent<HPSPAM>();
+            
             if (hit.transform.tag == "Player")
             {
-                if(hit.transform.gameObject.GetComponent<HPSPAM>().playerSP > 0)
+                if (enemy.playerSP > 0)
                 {
-                    hit.transform.gameObject.GetComponent<HPSPAM>().TakeDamageSP(hporsp.playerDamage);
+                    enemy.TakeDamageSP(hporsp.playerDamage);
+                    enemy.playerSP -= hporsp.playerDamage;
                 }
-                else if (hit.transform.gameObject.GetComponent<HPSPAM>().playerSP <= 0)
+                else if (enemy.playerSP <= 0)
                 {
-                    hit.transform.gameObject.GetComponent<HPSPAM>().TakeDamageHP(hporsp.playerDamage);
+                    enemy.TakeDamageHP(hporsp.playerDamage);
+                    enemy.playerHP -= enemy.playerDamage;
                 }
-                
+
             }
 
             GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));

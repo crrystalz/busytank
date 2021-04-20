@@ -244,7 +244,7 @@ MonoBehaviour:
   playerHP: 100
   playerSP: 100
   playerAM: 1000
-  playerDamage: 2
+  playerDamage: 1
   sp: {fileID: 0}
   hp: {fileID: 0}
   am: {fileID: 0}

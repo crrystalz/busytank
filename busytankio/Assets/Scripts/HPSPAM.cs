@@ -152,6 +152,7 @@ public class HPSPAM : MonoBehaviour
         if (PV.IsMine)
         {
             currentSP += heal;
+            
 
             sp.SetHP(currentSP);
         }
