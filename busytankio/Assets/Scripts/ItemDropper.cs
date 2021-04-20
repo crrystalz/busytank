@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Photon.Pun;
+using System.IO;
 public class ItemDropper : MonoBehaviour
 {
     public GameObject prefab1;
@@ -40,22 +41,22 @@ public class ItemDropper : MonoBehaviour
             switch (whatToSpawn)
             {
                 case 1:
-                    Instantiate(prefab1, pos, Quaternion.identity);
+                    PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Busytankio_Heavy_Ammo_Chest(Clone)"), pos, Quaternion.identity);
                     break;
                 case 2:
-                    Instantiate(prefab2, pos, Quaternion.identity);
+                    PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Busytankio_Light_Ammo_Chest(Clone)"), pos, Quaternion.identity);
                     break;
                 case 3:
-                    Instantiate(prefab3, pos, Quaternion.identity);
+                    PhotonNetwork.Instantiate(Path.Combine("Prefabs", "MedKit (2) 1(Clone)"), pos, Quaternion.identity);
                     break;
                 case 4:
-                    Instantiate(prefab4, pos, Quaternion.identity);
+                    PhotonNetwork.Instantiate(Path.Combine("Prefabs", "MedKit smalt(Clone)"), pos, Quaternion.identity);
                     break;
                 case 5:
-                    Instantiate(prefab5, pos, Quaternion.identity);
+                    PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ReinforcedSteel(Clone)"), pos, Quaternion.identity);
                     break;
                 case 6:
-                    Instantiate(prefab6, pos, Quaternion.identity);
+                    PhotonNetwork.Instantiate(Path.Combine("Prefabs", "SmallReinforcedSteel(Clone)"), pos, Quaternion.identity);
                     break;
 
             }

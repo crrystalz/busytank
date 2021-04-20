@@ -245,9 +245,6 @@ MonoBehaviour:
   playerSP: 100
   playerAM: 1000
   playerDamage: 2
-  spobj: {fileID: 0}
-  hpobj: {fileID: 0}
-  amobj: {fileID: 0}
   sp: {fileID: 0}
   hp: {fileID: 0}
   am: {fileID: 0}

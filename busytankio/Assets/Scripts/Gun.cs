@@ -53,7 +53,7 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(player.transform.position, player.transform.forward, out hit, range))
         {
-            Debug.Log(hit.transform.name);
+            //Debug.Log(hit.transform.name);
 
             HPSPAM target = hit.transform.GetComponent<HPSPAM>();
             if (hit.transform.tag == "Player")
