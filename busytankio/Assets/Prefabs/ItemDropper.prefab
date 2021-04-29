@@ -43,12 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca3af4f423481d4cb25191da5884106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab1: {fileID: 4240199313032484306, guid: 5678fec0b6d4fae4bb90aa75cfa3911e, type: 3}
-  prefab2: {fileID: 38841563147529708, guid: f5250056786247e419577cf91f249c1f, type: 3}
-  prefab3: {fileID: 4524418734183603019, guid: e38e2a5d54da1304a971ccef2adec501, type: 3}
-  prefab4: {fileID: 6001945773832649663, guid: f6647c0b39ef27146b45cc1e9a8e3141, type: 3}
-  prefab5: {fileID: 5148288246045587987, guid: af4946803639a23499c247dc5ec3e7b2, type: 3}
-  prefab6: {fileID: 8163490174197600710, guid: da365a018aec9e149bd0bf3f79a697fb, type: 3}
+  prefab1: {fileID: 5588092067933879188, guid: 5f22e15332c9f16408211231564c5f46, type: 3}
+  prefab2: {fileID: 4135091673857182772, guid: cb4b8aaad90eb9d40aa903650ff8226c, type: 3}
+  prefab3: {fileID: 3175254686167440074, guid: f7a1c335f886302409f2971553eb93a4, type: 3}
+  prefab4: {fileID: 3527916190674148923, guid: a755272d947bdb743be493d42ee84730, type: 3}
+  prefab5: {fileID: 8783251347747336918, guid: d7a8ea855dd6de34f9c4d334bf71c193, type: 3}
+  prefab6: {fileID: 2739406120369958182, guid: 57b242ac9a3c8c240a7972f6795721f4, type: 3}
   counter: 0
   stopSpawn: 50
   spawnRate: 2

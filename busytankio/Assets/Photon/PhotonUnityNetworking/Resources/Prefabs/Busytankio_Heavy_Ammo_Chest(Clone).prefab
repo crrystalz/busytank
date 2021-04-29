@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2830133936695606365
+--- !u!1 &5588092067933879188
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4580736944582432815}
-  - component: {fileID: 2680293930840893390}
-  - component: {fileID: 3930018271639946581}
-  - component: {fileID: 1515457371016339107}
-  - component: {fileID: 4513297241270938421}
+  - component: {fileID: 6149744498252226534}
+  - component: {fileID: 5762376424888246279}
+  - component: {fileID: 6647446336306168476}
+  - component: {fileID: 9209227378063677802}
+  - component: {fileID: 6082164207763123452}
+  - component: {fileID: 2250411829524298089}
   m_Layer: 0
-  m_Name: default
-  m_TagString: Untagged
+  m_Name: Busytankio_Heavy_Ammo_Chest(Clone)
+  m_TagString: ammo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4580736944582432815
+--- !u!4 &6149744498252226534
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2830133936695606365}
+  m_GameObject: {fileID: 5588092067933879188}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1334972661380499040}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2680293930840893390
+--- !u!33 &5762376424888246279
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2830133936695606365}
+  m_GameObject: {fileID: 5588092067933879188}
   m_Mesh: {fileID: -2432090755550338912, guid: 7cba1f20a09a11248906f64507b9d2e6, type: 3}
---- !u!23 &3930018271639946581
+--- !u!23 &6647446336306168476
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2830133936695606365}
+  m_GameObject: {fileID: 5588092067933879188}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -83,13 +84,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1515457371016339107
+--- !u!64 &9209227378063677802
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2830133936695606365}
+  m_GameObject: {fileID: 5588092067933879188}
   m_Material: {fileID: 13400000, guid: 487eb51227130d546b8c4cf1e8686563, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -97,13 +98,13 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 7cba1f20a09a11248906f64507b9d2e6, type: 3}
---- !u!54 &4513297241270938421
+--- !u!54 &6082164207763123452
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2830133936695606365}
+  m_GameObject: {fileID: 5588092067933879188}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -113,45 +114,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &8163490174197600710
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1334972661380499040}
-  - component: {fileID: -6870901244186789592}
-  m_Layer: 0
-  m_Name: Busytankio_Heavy_Ammo_Chest(Clone)
-  m_TagString: ammo
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1334972661380499040
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8163490174197600710}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 66.31981, y: 95.085175, z: 171.3406}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4580736944582432815}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-6870901244186789592
+--- !u!114 &2250411829524298089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8163490174197600710}
+  m_GameObject: {fileID: 5588092067933879188}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
@@ -162,7 +131,7 @@ MonoBehaviour:
   prefixField: -1
   observableSearch: 2
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   ObservedComponents: []
   viewIdField: 0
   InstantiationId: 0

@@ -93,6 +93,7 @@ public class HPSPAM : MonoBehaviour
                 }
 
             }
+            
             /*
             if (ammoUp == true)
             {
@@ -117,6 +118,7 @@ public class HPSPAM : MonoBehaviour
 
     }
 
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -142,7 +144,6 @@ public class HPSPAM : MonoBehaviour
                 Debug.Log("Ammo Collected");
                 ammoUp = true;
             }
-
         }
         
     }
@@ -151,6 +152,7 @@ public class HPSPAM : MonoBehaviour
     {
         if (PV.IsMine)
         {
+            playerSP += heal;
             currentSP += heal;
             
 
@@ -162,6 +164,7 @@ public class HPSPAM : MonoBehaviour
     {
         if (PV.IsMine)
         {
+            playerSP += 100 - currentSP;
             currentSP += 100 - currentSP;
 
             hp.SetHP(currentSP);
@@ -173,6 +176,7 @@ public class HPSPAM : MonoBehaviour
     {
         if (PV.IsMine)
         {
+            playerHP += heal;
             currentHP += heal;
 
             hp.SetHP(currentHP);
@@ -183,6 +187,7 @@ public class HPSPAM : MonoBehaviour
     {
         if (PV.IsMine)
         {
+            playerHP += 100 - currentSP;
             currentHP += 100 - currentHP;
 
             hp.SetHP(currentHP);
