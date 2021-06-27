@@ -252,6 +252,7 @@ MonoBehaviour:
   ammoUp: 0
   healthUp: 0
   PV: {fileID: 1381612180777589628}
+  prefab_floatyText: {fileID: 7570875720919031836, guid: 48b4b4a512626fa4fa4685daed0e3180, type: 3}
 --- !u!1 &5663482317255368456
 GameObject:
   m_ObjectHideFlags: 0

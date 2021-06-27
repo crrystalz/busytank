@@ -1057,5 +1057,5 @@ MonoBehaviour:
   minPlayersToStart: 2
   playerCountDisplay: {fileID: 168490481}
   countdownDisplay: {fileID: 1585249148}
-  maxWaitTime: 30
+  maxWaitTime: 10
   maxFullGameTime: 5

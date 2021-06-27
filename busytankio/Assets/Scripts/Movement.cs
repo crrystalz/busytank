@@ -20,8 +20,13 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         PV = GetComponent<PhotonView>();
         rb = GetComponent<Rigidbody>();
+        if (PV.IsMine)
+        {
+            myCam.tag = "MainCamera";
+        }
         
     }
 

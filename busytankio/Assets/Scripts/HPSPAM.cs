@@ -7,6 +7,8 @@ using UnityEngine;
 public class HPSPAM : MonoBehaviour
 {
 
+
+
     public int playerHP;
     public int playerSP;
     public int playerAM;
@@ -30,6 +32,8 @@ public class HPSPAM : MonoBehaviour
     public bool healthUp = false;
 
     public PhotonView PV;
+
+    public FloatyText prefab_floatyText;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,8 +47,8 @@ public class HPSPAM : MonoBehaviour
         currentHP = playerHP;
         //int playerSP1 = playerSP;
         currentSP = playerSP;
-        sp.SetMaxHP(playerSP);
-        hp.SetMaxHP(playerHP);
+        sp?.SetMaxHP(playerSP);
+        hp?.SetMaxHP(playerHP);
     }
 
     // Update is called once per frame
@@ -94,7 +98,7 @@ public class HPSPAM : MonoBehaviour
 
             }
             
-            /*
+            
             if (ammoUp == true)
             {
                 ammoUp = false;
@@ -112,7 +116,7 @@ public class HPSPAM : MonoBehaviour
                 }
 
             }
-            */
+            
         }
         
 
@@ -129,6 +133,7 @@ public class HPSPAM : MonoBehaviour
                 PhotonNetwork.Destroy(other.gameObject);
                 Debug.Log("Shield Collected");
                 shildUp = true;
+                FloatyText.Make(prefab_floatyText, "+Shield", other.transform.position);
             }
 
             if (other.gameObject.CompareTag("health"))
@@ -136,6 +141,7 @@ public class HPSPAM : MonoBehaviour
                 PhotonNetwork.Destroy(other.gameObject);
                 Debug.Log("Meds Collected");
                 healthUp = true;
+                FloatyText.Make(prefab_floatyText, "+Health", other.transform.position);
             }
 
             if (other.gameObject.CompareTag("ammo"))
@@ -143,6 +149,7 @@ public class HPSPAM : MonoBehaviour
                 PhotonNetwork.Destroy(other.gameObject);
                 Debug.Log("Ammo Collected");
                 ammoUp = true;
+                FloatyText.Make(prefab_floatyText, "+Ammo", other.transform.position);
             }
         }
         
@@ -228,7 +235,7 @@ public class HPSPAM : MonoBehaviour
         }
         
     }
-    /*
+    
     void GetAMMO(int bullets)
     {
         am.AmmoV += bullets;
@@ -239,6 +246,6 @@ public class HPSPAM : MonoBehaviour
         am.AmmoV += am.AmmoStart - am.AmmoV;
 
     }
-    */
+    
 }
 
