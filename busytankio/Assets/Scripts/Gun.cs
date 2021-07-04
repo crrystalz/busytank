@@ -25,30 +25,38 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PV.IsMine)
+        if (!Tank.isPlayer(gameObject))
         {
-            if (Input.GetMouseButtonDown(0))
+            return;
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (hporsp.playerAM > 0)
             {
-                if (hporsp.playerAM > 0)
+                //ViewID for PV
+                if (PV.IsOwnerActive)
                 {
                     PV.RPC("RPC_Shoot", RpcTarget.All);
                 }
                 else
                 {
-                    Debug.Log("No more bullets! Go find some!");
-
-
-
-
+                    RPC_Shoot();
                 }
+
+            }
+            else
+            {
+                Debug.Log("No more bullets! Go find some!");
             }
         }
+        
 
     }
     [PunRPC]
-    void RPC_Shoot ()
+    public void RPC_Shoot ()
     {
         particalsystem.Play();
+        hporsp.am.AmmoV -= 1;
         hporsp.playerAM -= 1;
         RaycastHit hit;
         if (Physics.Raycast(player.transform.position, player.transform.forward, out hit, range))
@@ -60,21 +68,25 @@ public class Gun : MonoBehaviour
             
             if (hit.transform.tag == "Player")
             {
-                if (enemy.playerSP > 0)
-                {
-                    enemy.TakeDamageSP(hporsp.playerDamage);
-                    enemy.playerSP -= hporsp.playerDamage;
-                }
-                else if (enemy.playerSP <= 0)
-                {
-                    enemy.TakeDamageHP(hporsp.playerDamage);
-                    enemy.playerHP -= enemy.playerDamage;
-                }
-
+                DealDamage(enemy);
             }
 
             GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactGO, 2);
+        }
+    }
+
+    void DealDamage(HPSPAM enemy)
+    {
+        if (enemy.playerSP > 0)
+        {
+            enemy.TakeDamageSP(hporsp.playerDamage);
+            enemy.playerSP -= hporsp.playerDamage;
+        }
+        else if (enemy.playerSP <= 0)
+        {
+            enemy.TakeDamageHP(hporsp.playerDamage);
+            enemy.playerHP -= enemy.playerDamage;
         }
     }
 }

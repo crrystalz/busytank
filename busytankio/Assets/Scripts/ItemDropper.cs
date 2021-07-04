@@ -33,35 +33,64 @@ public class ItemDropper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        while(counter < stopSpawn)
+        if(PhotonNetwork.CountOfPlayers > 0)
         {
-            Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
-            whatToSpawn = Random.Range(1, 7);
-            switch (whatToSpawn)
-            {
-                case 1:
-                    PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Busytankio_Heavy_Ammo_Chest(Clone)"), pos, Quaternion.identity);
-                    break;
-                case 2:
-                    PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Busytankio_Light_Ammo_Chest(Clone)"), pos, Quaternion.identity);
-                    break;
-                case 3:
-                    PhotonNetwork.Instantiate(Path.Combine("Prefabs", "MedKit (2) 1(Clone)"), pos, Quaternion.identity);
-                    break;
-                case 4:
-                    PhotonNetwork.Instantiate(Path.Combine("Prefabs", "MedKit smalt(Clone)"), pos, Quaternion.identity);
-                    break;
-                case 5:
-                    PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ReinforcedSteel(Clone)"), pos, Quaternion.identity);
-                    break;
-                case 6:
-                    PhotonNetwork.Instantiate(Path.Combine("Prefabs", "SmallReinforcedSteel(Clone)"), pos, Quaternion.identity);
-                    break;
+            while(counter < stopSpawn)
+                    {
+                        Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
+                        whatToSpawn = Random.Range(1, 7);
+                        switch (whatToSpawn)
+                        {
+                            case 1:
+                                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Busytankio_Heavy_Ammo_Chest(Clone)"), pos, Quaternion.identity);
+                                break;
+                            case 2:
+                                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Busytankio_Light_Ammo_Chest(Clone)"), pos, Quaternion.identity);
+                                break;
+                            case 3:
+                                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "MedKit (2) 1(Clone)"), pos, Quaternion.identity);
+                                break;
+                            case 4:
+                                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "MedKit smalt(Clone)"), pos, Quaternion.identity);
+                                break;
+                            case 5:
+                                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ReinforcedSteel(Clone)"), pos, Quaternion.identity);
+                                break;
+                            case 6:
+                                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "SmallReinforcedSteel(Clone)"), pos, Quaternion.identity);
+                                break;
 
-            }
-            counter++;
+                        }
+                        counter++;
+                    }
         }
+        else
+        {
+            while (counter < stopSpawn)
+            {
+                Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
+                whatToSpawn = Random.Range(1, 7);
+                switch (whatToSpawn)
+                {
+                    case 1:
+                        Instantiate(prefab1, pos, Quaternion.identity);
+                        break;
+                    case 2:
+                        Instantiate(prefab2, pos, Quaternion.identity); break;
+                    case 3:
+                        Instantiate(prefab3, pos, Quaternion.identity); break;
+                    case 4:
+                        Instantiate(prefab4, pos, Quaternion.identity); break;
+                    case 5:
+                        Instantiate(prefab5, pos, Quaternion.identity); break;
+                    case 6:
+                        Instantiate(prefab6, pos, Quaternion.identity); break;
+
+                }
+                counter++;
+            }
+        }
+        
         
     }
 
