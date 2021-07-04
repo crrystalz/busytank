@@ -30,17 +30,34 @@ public class HPSPAM : MonoBehaviour
     public bool shildUp = false;
     public bool ammoUp = false;
     public bool healthUp = false;
+    public bool singleplayer = false;
 
-    public PhotonView PV;
+    private PhotonView PV;
 
     public FloatyText prefab_floatyText;
+
+    private void Awake()
+    {
+        PV = GetComponent<PhotonView>();
+        if (PV != null && PV.IsMine)
+        {
+            Tank.MainPlayer = gameObject;
+        }
+        if (Tank.MainPlayer == null && singleplayer)
+        {
+            Tank.MainPlayer = gameObject;
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
-        if (PV.IsMine)
+        if (Tank.isPlayer(gameObject))
         {
             sp = FindObjectOfType<ShieldBar>();
             hp = FindObjectOfType<HealthBar>();
+            am = FindObjectOfType<Ammo>();
         }
 
         //int playerHP1 = playerHP;
@@ -49,6 +66,9 @@ public class HPSPAM : MonoBehaviour
         currentSP = playerSP;
         sp?.SetMaxHP(playerSP);
         hp?.SetMaxHP(playerHP);
+        am.AmmoStart = playerAM;
+        am.AmmoV = playerAM;
+        
     }
 
     // Update is called once per frame
@@ -60,7 +80,7 @@ public class HPSPAM : MonoBehaviour
         z1 = transform.position.z;
 
         pos = new Vector3(x1, y1, z1);
-        if (PV.IsMine)
+        if (Tank.isPlayer(gameObject))
         {
             if (shildUp == true)
             {
@@ -97,7 +117,7 @@ public class HPSPAM : MonoBehaviour
                 }
 
             }
-            
+
             
             if (ammoUp == true)
             {
@@ -126,7 +146,7 @@ public class HPSPAM : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (PV.IsMine)
+        if(Tank.isPlayer(gameObject))
         {
             if (other.gameObject.CompareTag("shild"))
             {
@@ -157,7 +177,7 @@ public class HPSPAM : MonoBehaviour
 
     void GetSP(int heal)
     {
-        if (PV.IsMine)
+        if (Tank.isPlayer(gameObject))
         {
             playerSP += heal;
             currentSP += heal;
@@ -169,7 +189,7 @@ public class HPSPAM : MonoBehaviour
     }
     void GetMaxSP()
     {
-        if (PV.IsMine)
+        if (Tank.isPlayer(gameObject))
         {
             playerSP += 100 - currentSP;
             currentSP += 100 - currentSP;
@@ -181,7 +201,7 @@ public class HPSPAM : MonoBehaviour
 
     void GetHP(int heal)
     {
-        if (PV.IsMine)
+        if (Tank.isPlayer(gameObject))
         {
             playerHP += heal;
             currentHP += heal;
@@ -192,7 +212,7 @@ public class HPSPAM : MonoBehaviour
     }
     void GetMaxHP()
     {
-        if (PV.IsMine)
+        if (Tank.isPlayer(gameObject))
         {
             playerHP += 100 - currentSP;
             currentHP += 100 - currentHP;
@@ -205,7 +225,7 @@ public class HPSPAM : MonoBehaviour
     public void TakeDamageHP(int damage)
     {
 
-        if (PV.IsMine)
+        if (Tank.isPlayer(gameObject))
         {
             currentHP -= damage;
 
@@ -226,7 +246,7 @@ public class HPSPAM : MonoBehaviour
     }
     public void TakeDamageSP(int damage)
     {
-        if (PV.IsMine)
+        if (Tank.isPlayer(gameObject))
         {
             currentSP -= damage;
 
@@ -239,11 +259,13 @@ public class HPSPAM : MonoBehaviour
     void GetAMMO(int bullets)
     {
         am.AmmoV += bullets;
+        playerAM += bullets;
 
     }
     void GetMaxAMMO()
     {
         am.AmmoV += am.AmmoStart - am.AmmoV;
+        playerAM += am.AmmoStart - playerAM;
 
     }
     

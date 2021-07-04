@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     public float gravitymultiplier;
     public int numPlayer;
     private Rigidbody rb;
-    private PhotonView PV;
+    
     public Camera myCam;
     public AudioListener myAL;
 
@@ -21,9 +21,9 @@ public class Movement : MonoBehaviour
     void Start()
     {
         
-        PV = GetComponent<PhotonView>();
+        
         rb = GetComponent<Rigidbody>();
-        if (PV.IsMine)
+        if (Tank.isPlayer(gameObject))
         {
             myCam.tag = "MainCamera";
         }
@@ -34,7 +34,7 @@ public class Movement : MonoBehaviour
     void Update()
     {
         // IMPORTANT!!! RIGHT = FORWARD  LEFT = BACKWARD !!!!!
-        if (PV.IsMine)
+        if (Tank.isPlayer(gameObject))
         {
             Move();
             Turn();
