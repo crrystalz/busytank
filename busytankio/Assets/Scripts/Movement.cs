@@ -56,7 +56,7 @@ public class Movement : MonoBehaviour
             //rb.AddRelativeForce(Vector3.forward * speed);
             rb.velocity = transform.forward * speed;
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if(Input.GetKey(KeyCode.S))
         {
             //rb.AddRelativeForce(Vector3.back * speed);
             rb.velocity = transform.forward * -speed;
