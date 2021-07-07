@@ -48,6 +48,7 @@ public class FloatyText : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
 
     }
 

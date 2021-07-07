@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Gun : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Gun : MonoBehaviour
 
     public HPSPAM hporsp;
     public GameObject player;
-    public ParticleSystem particalsystem;
+    public VisualEffect viseff;
     public GameObject impactEffect;
     public int numPlayer;
 
@@ -55,9 +56,13 @@ public class Gun : MonoBehaviour
     [PunRPC]
     public void RPC_Shoot ()
     {
-        particalsystem.Play();
-        hporsp.am.AmmoV -= 1;
-        hporsp.playerAM -= 1;
+        viseff.Play();
+        if(gameObject.CompareTag("Turret") != true)
+        {
+            hporsp.am.AmmoV -= 1;
+            hporsp.playerAM -= 1;
+        }
+        
         RaycastHit hit;
         if (Physics.Raycast(player.transform.position, player.transform.forward, out hit, range))
         {
