@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHP: 100
   playerSP: 100
-  playerAM: 1000
+  playerAM: 100
   playerDamage: 1
   sp: {fileID: 0}
   hp: {fileID: 0}
