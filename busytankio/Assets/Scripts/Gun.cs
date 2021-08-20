@@ -57,9 +57,10 @@ public class Gun : MonoBehaviour
     public void RPC_Shoot()
     {
         viseff.Play();
-        hporsp.am.AmmoV -= 1;
-        hporsp.playerAM -= 1;
-        
+        if(gameObject.CompareTag("Turret") != true)
+        {
+            hporsp.playerAM -= 1;
+        }
         
         RaycastHit hit;
         if (Physics.Raycast(player.transform.position, player.transform.forward, out hit, range))
