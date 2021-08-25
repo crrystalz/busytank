@@ -12,6 +12,7 @@ TagManager:
   - shieldbar
   - ammobar
   - Turret
+  - Model
   layers:
   - Default
   - TransparentFX

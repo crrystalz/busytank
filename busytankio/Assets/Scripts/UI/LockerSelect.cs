@@ -1,17 +1,12 @@
-﻿using Photon.Pun;
-using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NetworkController : MonoBehaviourPunCallbacks
+public class LockerSelect : MonoBehaviour
 {
-
-    
     // Start is called before the first frame update
     void Start()
     {
-        PhotonNetwork.ConnectUsingSettings();
         
     }
 
