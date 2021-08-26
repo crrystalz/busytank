@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class GameSetupController : MonoBehaviour
 {
+    public RotateLocker rl;
     // Start is called before the first frame update
     void Start()
     {
-        CreateScout();
+        rl = GameObject.Find("TankSelector").GetComponent<RotateLocker>();
+        if(rl.tankSelection == 1){
+            CreateMortar();
+        }
+        if(rl.tankSelection == 2){
+            CreateScout();
+        }
+        
     }
 
     private void CreateScout()
@@ -18,6 +26,6 @@ public class GameSetupController : MonoBehaviour
     private void CreateMortar()
     {
         Debug.Log("Loading Player.");
-        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "ScoutTank(2Part)"), Vector3.up*10, Quaternion.identity);
+        PhotonNetwork.Instantiate(Path.Combine("Prefabs", "MortarTankPref"), Vector3.up*10, Quaternion.identity);
     }
 }

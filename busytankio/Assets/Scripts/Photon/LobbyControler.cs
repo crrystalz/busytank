@@ -1,7 +1,7 @@
 ﻿using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class LobbyControler : MonoBehaviourPunCallbacks
 {
     [SerializeField]
@@ -11,11 +11,9 @@ public class LobbyControler : MonoBehaviourPunCallbacks
     [SerializeField]
     private int roomsize;
 
-    void Start()
-    {
+    public void ConnectToPhoton(){
         PhotonNetwork.ConnectUsingSettings();
     }
-
 
     public override void OnConnectedToMaster()
     {
@@ -64,5 +62,9 @@ public class LobbyControler : MonoBehaviourPunCallbacks
         delayCancelButton.SetActive(false);
         delayStartButton.SetActive(true);
         PhotonNetwork.LeaveRoom();
+    }
+
+    public void SinglePlayer(){
+        SceneManager.LoadScene("Single Player");
     }
 }

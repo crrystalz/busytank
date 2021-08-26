@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 7904246091912967691}
   - component: {fileID: 2068214881871832321}
   m_Layer: 0
-  m_Name: MortarTank
+  m_Name: MortarTankPref
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
