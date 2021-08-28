@@ -666,11 +666,7 @@ MonoBehaviour:
   model2: {fileID: 0}
   speed: 20
   tankSelection: 1
---- !u!4 &880014810 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fb871f44c9564fb419d0c055d2cf3db8, type: 3}
-  m_PrefabInstance: {fileID: 307204399}
-  m_PrefabAsset: {fileID: 0}
+  scener: 0
 --- !u!1 &882355209
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,11 +840,7 @@ MonoBehaviour:
   model2: {fileID: 0}
   speed: 20
   tankSelection: 1
---- !u!4 &946947747 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 955ce5fe165227345a17161e0505c823, type: 3}
-  m_PrefabInstance: {fileID: 925106377}
-  m_PrefabAsset: {fileID: 0}
+  scener: 0
 --- !u!1 &1111432221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,10 +1530,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaa90cbdd356f014793e968625ba352a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 946947747}
-  model2: {fileID: 880014810}
+  model: {fileID: 0}
+  model2: {fileID: 0}
   speed: 0
   tankSelection: 1
+  scener: 1
 --- !u!1 &1902444882
 GameObject:
   m_ObjectHideFlags: 0

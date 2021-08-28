@@ -11,6 +11,8 @@ public class LobbyControler : MonoBehaviourPunCallbacks
     [SerializeField]
     private int roomsize;
 
+    private int roomID;
+
     public void ConnectToPhoton(){
         PhotonNetwork.ConnectUsingSettings();
     }
@@ -48,7 +50,7 @@ public class LobbyControler : MonoBehaviourPunCallbacks
         int randomRoomNumber = Random.Range(0, 10000);
         RoomOptions roomOps = new RoomOptions() { IsVisible = true, IsOpen = true, MaxPlayers = (byte)roomsize };
         PhotonNetwork.CreateRoom("Room" + randomRoomNumber, roomOps);
-        Debug.Log(randomRoomNumber);
+        roomID = randomRoomNumber;
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)
