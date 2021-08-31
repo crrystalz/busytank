@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class GameSetupController : MonoBehaviour
 {
-    public RotateLocker rl;
+    public TankSelection rl;
     // Start is called before the first frame update
     void Start()
     {
-        rl = GameObject.Find("TankSelector").GetComponent<RotateLocker>();
-        if(rl.tankSelection == 1){
+        rl = GameObject.Find("TankSelector").GetComponent<TankSelection>();
+        if(rl.tankNumber == 1){
             CreateMortar();
         }
-        if(rl.tankSelection == 2){
+        if(rl.tankNumber == 2){
             CreateScout();
         }
         

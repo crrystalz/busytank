@@ -9,8 +9,9 @@ public class Movement : MonoBehaviour
     public float turnspeed;
     public float gravitymultiplier;
     public int numPlayer;
+    public bool mobile = false;
     private Rigidbody rb;
-    
+    public GameObject vj;
     public Camera myCam;
     public AudioListener myAL;
 
@@ -20,7 +21,9 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(mobile == true){
+            vj = GameObject.Find("Handle");
+        }
         
         rb = GetComponent<Rigidbody>();
         if (Tank.isPlayer(gameObject))
@@ -50,20 +53,30 @@ public class Movement : MonoBehaviour
 
     void Move()
     {
-        
-        if (Input.GetKey(KeyCode.W))
-        {
-            //rb.AddRelativeForce(Vector3.forward * speed);
-            rb.velocity = transform.forward * speed;
+        if(mobile != true){
+            if (Input.GetKey(KeyCode.W))
+            {
+                //rb.AddRelativeForce(Vector3.forward * speed);
+                rb.velocity = transform.forward * speed;
+            }
+            else if(Input.GetKey(KeyCode.S))
+            {
+                //rb.AddRelativeForce(Vector3.back * speed);
+                rb.velocity = transform.forward * -speed;
+            }
+            Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity);
+            localVelocity.z = 0;
+            //rb.velocity = transform.TransformDirection(localVelocity);
         }
-        else if(Input.GetKey(KeyCode.S))
-        {
-            //rb.AddRelativeForce(Vector3.back * speed);
-            rb.velocity = transform.forward * -speed;
+        else{
+            if(vj.transform.position.x > -60 && vj.transform.position.y > 0 || vj.transform.position.x > 60 && vj.transform.position.y > 0 ){
+                rb.velocity = transform.forward * speed;
+            }
+            else{
+                rb.velocity = transform.forward * -speed;
+            }
+            
         }
-        Vector3 localVelocity = transform.InverseTransformDirection(rb.velocity);
-        localVelocity.z = 0;
-        //rb.velocity = transform.TransformDirection(localVelocity);
 
     }
 
