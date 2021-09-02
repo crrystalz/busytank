@@ -60,6 +60,7 @@ public class Gun : MonoBehaviour
         if(gameObject.CompareTag("Turret") != true)
         {
             hporsp.playerAM -= 1;
+            hporsp.am.AmmoV -= 1;
         }
         
         RaycastHit hit;

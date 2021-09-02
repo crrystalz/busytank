@@ -221,6 +221,8 @@ MonoBehaviour:
   turnspeed: 90
   gravitymultiplier: 10
   numPlayer: 1
+  mobile: 0
+  vj: {fileID: 0}
   myCam: {fileID: 1456204789438579883}
   myAL: {fileID: 9119900867284897869}
 --- !u!114 &6733007433485552831
