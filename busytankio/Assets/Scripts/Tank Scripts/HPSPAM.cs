@@ -235,6 +235,7 @@ public class HPSPAM : MonoBehaviour
                 PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Death Marker Variant"), pos, Quaternion.identity);
                 PhotonNetwork.Destroy(gameObject);
                 PhotonNetwork.Instantiate(Path.Combine("Prefabs", "CamCam"), Vector3.zero, Quaternion.identity);
+                PhotonNetwork.Instantiate(Path.Combine("Prefabs", "Explosion2"), pos, Quaternion.identity);
             }
         }
        
