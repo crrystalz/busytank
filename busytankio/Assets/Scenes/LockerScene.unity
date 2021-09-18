@@ -152,6 +152,7 @@ RectTransform:
   m_Children:
   - {fileID: 1929266783}
   - {fileID: 1152237234}
+  - {fileID: 818081417}
   m_Father: {fileID: 660639994}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -293,7 +294,6 @@ RectTransform:
   - {fileID: 186163866}
   - {fileID: 630922333}
   - {fileID: 1248380249}
-  - {fileID: 818081417}
   - {fileID: 1902444883}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -519,16 +519,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 818081416}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 660639994}
-  m_RootOrder: 3
+  m_Father: {fileID: 186163866}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 1.5, y: 122.73}
+  m_AnchoredPosition: {x: 1.5, y: -121.27}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &818081418
@@ -551,7 +551,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5db73849a1d58244fa7e941ff9e11de9, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -977,7 +977,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1152237236}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1706970890}
+        m_TargetAssemblyTypeName: TankSelectorFinder, Assembly-CSharp
+        m_MethodName: NextLogo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1152237236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1266,8 +1278,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1006892751}
+  image2: {fileID: 818081418}
   tank1: {fileID: 21300000, guid: bee8d4f210539f646860de871276644a, type: 3}
   tank2: {fileID: 21300000, guid: a38aaeaa2c3587444b98110731990f36, type: 3}
+  logo1: {fileID: 21300000, guid: 8a2923d398736fe41898d0fdd70d61a4, type: 3}
+  logo2: {fileID: 21300000, guid: c9e0ea1e095eea245bcd38ead8b33ab8, type: 3}
+  logo3: {fileID: 21300000, guid: e4f22f010bc512c468333083c2edb257, type: 3}
+  logo4: {fileID: 21300000, guid: b471d309a528c9040b89e6d87d8d2068, type: 3}
+  logo5: {fileID: 21300000, guid: 5db73849a1d58244fa7e941ff9e11de9, type: 3}
   ts: {fileID: 0}
 --- !u!4 &1706970891
 Transform:
@@ -1448,7 +1466,7 @@ RectTransform:
   m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
   m_Children: []
   m_Father: {fileID: 660639994}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -1643,7 +1661,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1929266785}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1706970890}
+        m_TargetAssemblyTypeName: TankSelectorFinder, Assembly-CSharp
+        m_MethodName: PrevLogo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1929266785
 MonoBehaviour:
   m_ObjectHideFlags: 0

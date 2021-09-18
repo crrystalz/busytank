@@ -6,6 +6,7 @@ public class TankSelection : MonoBehaviour
 {
     
     public int tankNumber = 1;
+    public int logoNumber = 1;
     public static TankSelection instance;
     void Awake(){       
 
